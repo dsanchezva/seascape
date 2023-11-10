@@ -1,5 +1,7 @@
-const comentariosSchema = new mongoose.Schema({
-  comentario: {
+const { Schema, model } = require("mongoose");
+
+const commentSchema = new Schema({
+  comment: {
     type: String,
     required: true,
   },
@@ -12,3 +14,6 @@ const comentariosSchema = new mongoose.Schema({
     ref: "Beach",
   },
 });
+
+const Comment = model("Comment", commentSchema)
+module.exports = Comment

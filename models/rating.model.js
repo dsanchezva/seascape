@@ -1,4 +1,6 @@
-const ratingSchema = new mongoose.Schema({
+const { Schema, model } = require("mongoose");
+
+const ratingSchema = new Schema({
   rating: Number,
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -9,3 +11,6 @@ const ratingSchema = new mongoose.Schema({
     ref: "Beach",
   },
 });
+
+const Rating = model("Rating", ratingSchema)
+module.exports = Rating

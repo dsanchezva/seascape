@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const playasSchema = new Schema({
+const beachSchema = new Schema({
   name: {
     type: String,
     require: true,
@@ -31,14 +31,14 @@ const playasSchema = new Schema({
     type: [Number],
     require: true,
   },
-  dificultadAcceso: {
+  difficultyAccess: {
     type: String,
-    enum: ["facil", "medio", "dificil"],
+    enum: ["low", "medium", "high"],
     required: true,
   },
-  actividades: {
+  entertainment: {
     type: [String],
-    enum: ["pesca", "surf", "nudismo", "buceo"],
+    enum: ["surf", "nudism", "diving", "kayak"],
   },
   ratingUser: [
     {
@@ -47,3 +47,6 @@ const playasSchema = new Schema({
     },
   ],
 });
+
+const Beach = model("Beach", beachSchema);
+module.exports = Beach
