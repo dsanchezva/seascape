@@ -1,109 +1,143 @@
 const express = require("express");
 // const User = require("../models/User.model");
-const router = express.Router()
+const router = express.Router();
 const bcrypt = require("bcryptjs");
 const User = require("../models/User.model");
 
 //GET "user/login"
-router.get("/login", async (req, res, next) =>{
-   res.render("user/login.hbs")
-})
+router.get("/login", async (req, res, next) => {
+  res.render("user/login.hbs");
+});
 
 //POST "user/login"
-router.post("/login", async (req, res, next) =>{
-    const {email, password} = req.body
-    if(email === "" || password === ""){ //Verificamos que ninguno de los campos quede vacio
-        res.status(400).render("user/login.hbs", {
-            errMessage: "all fields must be filled up",
-            email, 
-            password
-        }) 
-        return //detener ruta
+router.post("/login", async (req, res, next) => {
+  const { email, password } = req.body;
+  //check if the email or password is empty
+  if (email === "" || password === "") {
+    //Verificamos que ninguno de los campos quede vacio
+    res.status(400).render("user/login.hbs", {
+      errMessage: "all fields must be filled up",
+      email,
+      password,
+    });
+    return; //detener ruta
+  }
+  try {
+    //search the user
+    const foundUser = await User.findOne({ email });
+    //check if the user is already registered
+    if (foundUser === null) {
+      res.status(400).render("user/login.hbs", {
+        errMessage: "User not found",
+        email,
+        password,
+      });
+      return;
     }
-    try{
-        
+    //check the password
+    const isPasswordValid = await bcrypt.compare(password, foundUser.password);
 
+    if (isPasswordValid === false) {
+      res.status(400).render("user/login.hbs", {
+        errMessage: "Wrong password!",
+        email,
+      });
+      return;
     }
-    catch(err){
-        next(err)
-    }
-})
+
+    //create  the session
+    const sessionInfo = {
+      _id: foundUser._id,
+      email: foundUser.email,
+      role: foundUser.role,
+    };
+    req.session.user = sessionInfo;
+    req.session.save(() => {
+      res.redirect(`/content`);
+    });
+  } catch (err) {
+    next(err);
+  }
+});
 //GET "user/signup"
-router.get("/signup", async (req, res, next) =>{
-   res.render("user/signup.hbs")
-})
+router.get("/signup", async (req, res, next) => {
+  res.render("user/signup.hbs");
+});
 //POST "user/signup"
-router.post("/signup", async (req, res, next) =>{
-    const{username, email, password} = req.body
-    if(username === "" || email === "" || password === ""){
-        res.status(400).render("user/signup.hbs", {
-            errMessage: "all fields must be filled up",
-            email,
-            username
-        })
-        return
-    }
-    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm
-    if(passwordRegex.test(password) === false){
-        res.status(400).render("user/signup.hbs", {
-            errMessage: "password must have 8 characters, at least one upper and one lower case letter and a number",
-            email,
-            username
-        })
-        return
-    }
-    const emailRegex =
-    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
-    if (emailRegex.test(email) === false) {
+router.post("/signup", async (req, res, next) => {
+  // verify that the input are not empty
+  const { username, email, password } = req.body;
+  if (username === "" || email === "" || password === "") {
     res.status(400).render("user/signup.hbs", {
-      errMessage: "please writte the email in a valid format",
+      errMessage: "all fields must be filled up",
+      email,
       username,
-      email
     });
     return;
   }
-  //verificar si el email ya está registrado
-    try{
-        const userWithSameEmail = await User.findOne({email})
-        console.log("IMPRIMIENDO2", userWithSameEmail);
-        if(userWithSameEmail !== null){
-            res.status(400).render("user/signup.hbs", {
-                errMessage: "email already registered",
-                username,
-                
-              });
-              return 
-        }
-        const userWithSameUsername = await User.findOne({username})
-        console.log("IMPRIMIENDO2", userWithSameUsername);
-        if(userWithSameUsername !== null){
-            res.status(400).render("user/signup.hbs", {
-                errMessage: "username already registered",
-                email,
-                
-              });
-              return 
-        }
-        const salt = await bcrypt.genSalt(12)
-        const cryptedPass = await bcrypt.hash(password, salt)
+  //check if the password type is correct
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm;
+  if (passwordRegex.test(password) === false) {
+    res.status(400).render("user/signup.hbs", {
+      errMessage:
+        "password must have 8 characters, at least one upper and one lower case letter and a number",
+      email,
+      username,
+    });
+    return;
+  }
+  //check if the email format is correct
+  const emailRegex =
+    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
+  if (emailRegex.test(email) === false) {
+    res.status(400).render("user/signup.hbs", {
+      errMessage: "please writte the email in a valid format",
+      username,
+      email,
+    });
+    return;
+  }
 
-        await User.create({
-            username,
-            email, 
-            password: cryptedPass
-        })
-        res.redirect("/user/login")
-
+  try {
+    //check if the email is not already in the DB
+    const userWithSameEmail = await User.findOne({ email });
+    console.log("IMPRIMIENDO2", userWithSameEmail);
+    if (userWithSameEmail !== null) {
+      res.status(400).render("user/signup.hbs", {
+        errMessage: "email already registered",
+        username,
+      });
+      return;
     }
-    catch(err){
-        next(err)
+    //check if the username is not already in the DB
+    const userWithSameUsername = await User.findOne({ username });
+    console.log("IMPRIMIENDO2", userWithSameUsername);
+    if (userWithSameUsername !== null) {
+      res.status(400).render("user/signup.hbs", {
+        errMessage: "username already registered",
+        email,
+      });
+      return;
     }
-})
+    //password crypted
+    const salt = await bcrypt.genSalt(12);
+    const cryptedPass = await bcrypt.hash(password, salt);
 
+    await User.create({
+      username,
+      email,
+      password: cryptedPass,
+    });
+    res.redirect("/user/login");
+  } catch (err) {
+    next(err);
+  }
+});
 
-
-
-
-
-
-module.exports = router
+//GET "/user/logout"
+router.get("/logout", (req, res, next) => {
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
+});
+module.exports = router;

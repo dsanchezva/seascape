@@ -30,7 +30,7 @@ const beachSchema = new Schema({
     require: true,
   },
   location: {
-    type: [Number],
+    type: String,
     require: true,
   },
   difficultyAccess: {
@@ -41,7 +41,7 @@ const beachSchema = new Schema({
   entertainment: {
     type: [String],
     enum: ["surf", "nudism", "diving", "kayak"],
-  }
+  },
   // ratingUser: [
   //   {
   //     type: mongoose.Schema.Types.ObjectId,

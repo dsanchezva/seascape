@@ -1,3 +1,36 @@
 <div>
   <h3>Crear playas</h3>
+  <form action="/admin" method="post">
+    <label for="name">Name: </label>
+    <input type="text" name="name" value="{{this.name}}" />
+    <br />
+    <label for="region">Region: </label>
+    <input type="text" name="region" value="{{this.region}}" />
+    <br />
+    <label for="description">Description: </label>
+    <textarea
+      name="description"
+      cols="30"
+      rows="10"
+      value="{{this.description}}"
+    ></textarea>
+    <br />
+    <label for="location">Location: </label>
+    <input type="text" name="location" value="{{this.location}}" />
+    <br />
+    <label for="difficultyAccess">Access dificulty: </label>
+    <input
+      type="text"
+      name="difficultyAccess"
+      value="{{this.difficultyAccess}}"
+    />
+    <br />
+    <label for="entertainment">Entrertainment: </label>
+    <input type="text" name="entertainment" value="{{this.entertainment}}" />
+    <br />
+    <button>Create</button>
+    {{#if this.errMessage}}
+      <p>{{this.errMessage}}</p>
+    {{/if}}
+  </form>
 </div>

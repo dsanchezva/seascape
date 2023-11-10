@@ -1,4 +1,13 @@
-const express = require("express")
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
-module.exports = router 
+router.get("/", async (req, res, next) => {
+  res.render("content/main-page.hbs");
+
+  try {
+  } catch (err) {
+    next(err);
+  }
+});
+
+module.exports = router;

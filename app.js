@@ -25,8 +25,12 @@ const projectName = "Sea Space";
 app.locals.appTitle = `${capitalize(projectName)}`;
 
 // 👇 Start handling routes here
+const {
+  infoLocals,
+  infoLocalsAdmin,
+} = require("./middlewares/auth.middleware.js");
 const indexRoutes = require("./routes/index.routes");
-app.use("/", indexRoutes);
+app.use("/", infoLocals, infoLocalsAdmin, indexRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
