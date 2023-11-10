@@ -42,6 +42,7 @@ const beachSchema = new Schema({
     type: [String],
     enum: ["surf", "nudism", "diving", "kayak", ""],
   },
+  beachPic: String,
   // ratingUser: [
   //   {
   //     type: mongoose.Schema.Types.ObjectId,
