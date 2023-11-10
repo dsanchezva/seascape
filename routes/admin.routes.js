@@ -33,24 +33,24 @@ router.post("/", async (req, res, next) => {
       difficultyAccess,
       entertainment,
     });
-  } else {
     return;
   }
-  //   const coordinateRegex = /((-|)\d*\.\d*)/g;
-  //   if (coordinateRegex.test(location) === false) {
-  //     res.status(400).render("admin/create-form.hbs", {
-  //       errMessage: "Coordintates must have rigth format",
-  //       name,
-  //       region,
-  //       description,
-  //       location,
-  //       difficultyAccess,
-  //       entertainment,
-  //     });
-  //     return;
-  //   }
+  const coordinateRegex = /((-|)\d*\.\d*)/g;
+  if (coordinateRegex.test(location) === false) {
+    res.status(400).render("admin/create-form.hbs", {
+      errMessage: "Coordintates must have rigth format",
+      name,
+      region,
+      description,
+      location,
+      difficultyAccess,
+      entertainment,
+    });
+    return;
+  }
 
   try {
+    console.log("IMPRIMIENDO", req.body);
     await Beach.create({
       name,
       region,
@@ -59,7 +59,7 @@ router.post("/", async (req, res, next) => {
       difficultyAccess,
       entertainment,
     });
-    res.redirect("/content");
+    res.redirect("/");
   } catch (err) {
     next(err);
   }
