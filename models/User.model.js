@@ -26,7 +26,7 @@ const userSchema = new Schema(
       default: "user",
     },
     comment: {
-      type: mongoose.Schema.TYpes.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Comment",
     },
     profilePic: String,
