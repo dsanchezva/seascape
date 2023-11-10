@@ -40,7 +40,7 @@ const beachSchema = new Schema({
   },
   entertainment: {
     type: [String],
-    enum: ["surf", "nudism", "diving", "kayak"],
+    enum: ["surf", "nudism", "diving", "kayak", ""],
   },
   // ratingUser: [
   //   {
