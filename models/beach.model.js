@@ -41,13 +41,13 @@ const beachSchema = new Schema({
   entertainment: {
     type: [String],
     enum: ["surf", "nudism", "diving", "kayak"],
-  },
-  ratingUser: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+  }
+  // ratingUser: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "User",
+  //   },
+  // ],
 });
 
 const Beach = model("Beach", beachSchema);
