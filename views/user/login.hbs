@@ -1,4 +1,18 @@
 <div>
-  <h3>login</h3>
-  <p>Hola como estas</p>
+  <h3>Access</h3>
+  <form action="/user/login" method="post">
+  <label for="email">Email: </label>
+  <input type="text" name="email" value="{{this.email}}">
+  <br>
+  <label for="password">Password: </label>
+  <input type="text" name="password" value="{{this.password}}">
+  <br>
+  <button>Log In</button> 
+  {{#if this.errMessage}}
+  <p>{{this.errMessage}}</p>
+  {{/if}} 
+  </form>
+  <form action="/user/signup" method="post">
+  <button>Sign Up</button>
+  </form>
 </div>

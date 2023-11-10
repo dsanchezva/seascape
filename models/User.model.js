@@ -25,11 +25,11 @@ const userSchema = new Schema(
       enum: ["user", "admin"],
       default: "user",
     },
-    comment: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Comment",
-    },
-    profilePic: String,
+    // comment: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "Comment",
+    // },
+    profilePic: String
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
