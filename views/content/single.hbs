@@ -1,4 +1,7 @@
 <div>
+  {{>navBarPartial }}
+</div>
+<div>
   <h3>{{this.beach.name}}, {{this.beach.region}}</h3>
   <img src="{{this.beach.beachPic}}" alt="beach-image">
   <p>Description:</p>
@@ -18,4 +21,17 @@
     <a href="/admin/edit/{{this.beach._id}}"><button>Edit</button></a>
     {{/if}}
   </div>
+</div>
+<div>
+  <form action="/comment/create/{{this.beach._id}}" method="post">
+    <label for="comment">Comments: </label>
+    <textarea name="comment" cols="30" rows="10"></textarea>
+    <button>Send comment</button>
+    
+    </form>
+    {{#each this.comment}}
+   <p>
+{{this.user}}: {{this.comment}}
+   </p> 
+    {{/each}}
 </div>
