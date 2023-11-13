@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const Beach = require("../models/beach.model.js")
+const Beach = require("../models/Beach.model.js")
+const User = require("../models/User.model.js")
 
 router.get("/", async (req, res, next) => {
   res.render("content/main-page.hbs");
@@ -44,7 +45,9 @@ router.get("/:region/beachRegion", async (req, res, next) => {
 router.get("/:id/beachInfo", async (req, res, next) => {
   try {
     const beach = await Beach.findById(req.params.id)
-    res.render("content/single.hbs", {beach})
+    const comment = await Comment.find({beach: beach._id})
+    const user = await User.findById(comment.user).select({username: 1})
+    res.render("content/single.hbs", {beach, comment, user})
   } catch (err) {
     next(err)
   }

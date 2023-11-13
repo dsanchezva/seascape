@@ -15,4 +15,7 @@ router.use("/admin", isLoggedIn, isAdmin, adminRouter);
 const contentRouter = require("./content.routes.js");
 router.use("/content", isLoggedIn, contentRouter);
 
+const commentRouter = require("./comment.routes.js");
+router.use("/comment", isLoggedIn, commentRouter);
+
 module.exports = router;

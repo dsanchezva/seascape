@@ -1,4 +1,7 @@
 <div>
+  {{>navBarPartial }}
+</div>
+<div>
   <h3>Crear playas</h3>
   <form action="/admin" method="post">
     <label for="name">Name: </label>
@@ -27,8 +30,10 @@
     <label for="description">Description: </label>
     <textarea name="description" cols="30" rows="10" value="{{this.description}}"></textarea>
     <br />
-    <label for="location">Location: </label>
-    <input type="text" name="location" value="51.505, -0.09"/>
+    <label for="location">Latitude: </label>
+    <input type="number" name="location"/>
+      <label for="location">Longitude: </label>
+    <input type="number" name="location"/>
     <br />
     <label for="difficultyAccess">Access dificulty: </label>
     <select name="difficultyAccess">

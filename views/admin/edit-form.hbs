@@ -1,4 +1,7 @@
-  <h3>Crear playas</h3>
+  <div>
+  {{>navBarPartial }}
+</div>
+  <h3>Editar playas</h3>
   <form action="/admin/edit/{{this.beachToEdit._id}}" method="post">
     <label for="name">Name: </label>
     <input type="text" name="name" value="{{this.beachToEdit.name}}" />
@@ -26,8 +29,10 @@
     <label for="description">Description: </label>
     <textarea name="description" cols="30" rows="10">{{this.beachToEdit.description}}</textarea>
     <br />
-    <label for="location">Location: </label>
-    <input type="text" name="location" value="{{this.beachToEdit.location}}"/>
+    <label for="location">Latitude: </label>
+    <input type="number" name="location" value="{{this.latitude}}" selected/>
+     <label for="location">Longitude: </label>
+    <input type="number" name="location" value="{{this.longitude}}" selected/>
     <br />
     <label for="difficultyAccess">Access dificulty: </label>
     <select name="difficultyAccess">
@@ -50,12 +55,16 @@
       <option value="kayak">kayak</option>
     </select>
     <br />
-    <label for="image">Beach image: </label>
-    <input type="file" name="image">
-    <br>
     <button>Edit</button>
     {{#if this.errMessage}}
     <p>{{this.errMessage}}</p>
     {{/if}}
   </form>
+    <form action="/admin/upload/{{this.beachToEdit._id}}" method="post" enctype="multipart/form-data">
+    <label for="image">Beach image: </label>
+    <input type="file" name="image">
+    <button>Upload Image</button>
+    
+    </form>
+    <br>
 </div>
