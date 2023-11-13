@@ -30,7 +30,7 @@ const beachSchema = new Schema({
     require: true,
   },
   location: {
-    type: String,
+    type: [String],
     require: true,
   },
   difficultyAccess: {

@@ -101,7 +101,6 @@ router.post("/signup", async (req, res, next) => {
   try {
     //check if the email is not already in the DB
     const userWithSameEmail = await User.findOne({ email });
-    console.log("IMPRIMIENDO2", userWithSameEmail);
     if (userWithSameEmail !== null) {
       res.status(400).render("user/signup.hbs", {
         errMessage: "email already registered",
@@ -111,7 +110,6 @@ router.post("/signup", async (req, res, next) => {
     }
     //check if the username is not already in the DB
     const userWithSameUsername = await User.findOne({ username });
-    console.log("IMPRIMIENDO2", userWithSameUsername);
     if (userWithSameUsername !== null) {
       res.status(400).render("user/signup.hbs", {
         errMessage: "username already registered",

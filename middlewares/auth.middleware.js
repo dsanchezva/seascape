@@ -25,10 +25,12 @@ function isAdmin(req, res, next) {
 }
 
 function infoLocalsAdmin(req, res, next) {
-  if (req.session.user.role === "admin") {
-    res.locals.adminActive = true;
-  } else {
-    res.locals.adminActive = false;
+  if (req.session.user !== undefined) {
+    if (req.session.user.role === "admin") {
+      res.locals.adminActive = true;
+    } else {
+      res.locals.adminActive = false;
+    }
   }
   next();
 }

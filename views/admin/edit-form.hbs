@@ -1,12 +1,11 @@
-<div>
   <h3>Crear playas</h3>
-  <form action="/admin" method="post">
+  <form action="/admin/edit/{{this.beachToEdit._id}}" method="post">
     <label for="name">Name: </label>
-    <input type="text" name="name" value="{{this.name}}" />
+    <input type="text" name="name" value="{{this.beachToEdit.name}}" />
     <br />
     <label for="region">Region: </label>
     <select name="region">
-    <option selected></option>
+    <option value="{{this.beachToEdit.region}}" selected>{{this.beachToEdit.region}}</option>
     <option>--------------------</option>
     <option value="andalucia">andalucia</option>
     <option value="asturias">asturias</option>
@@ -25,14 +24,14 @@
     </select>
     <br />
     <label for="description">Description: </label>
-    <textarea name="description" cols="30" rows="10" value="{{this.description}}"></textarea>
+    <textarea name="description" cols="30" rows="10">{{this.beachToEdit.description}}</textarea>
     <br />
     <label for="location">Location: </label>
-    <input type="text" name="location" value="51.505, -0.09"/>
+    <input type="text" name="location" value="{{this.beachToEdit.location}}"/>
     <br />
     <label for="difficultyAccess">Access dificulty: </label>
     <select name="difficultyAccess">
-    <option selected></option>
+    <option value="{{this.beachToEdit.difficultyAccess}}" selected>{{this.beachToEdit.difficultyAccess}}</option>
     <option>--------------------</option>
     <option value="low">low</option>
     <option value="medium">medium</option>
@@ -41,7 +40,9 @@
     <br />
     <label for="entertainment">Entrertainment: </label>
     <select name="entertainment" multiple>
-      <option selected></option>
+      {{#each this.beachToEdit.entertainment}}
+      <option value="{{this}}" selected disabled>{{this}}</option>
+      {{/each}}
       <option>--------------------</option>
       <option value="surf">surf</option>
       <option value="nudism">nudism</option>
@@ -52,7 +53,7 @@
     <label for="image">Beach image: </label>
     <input type="file" name="image">
     <br>
-    <button>Create</button>
+    <button>Edit</button>
     {{#if this.errMessage}}
     <p>{{this.errMessage}}</p>
     {{/if}}

@@ -10,7 +10,7 @@ const userRouter = require("./user.routes.js");
 router.use("/user", userRouter);
 
 const adminRouter = require("./admin.routes.js");
-router.use("/admin", isAdmin, adminRouter);
+router.use("/admin", isLoggedIn, isAdmin, adminRouter);
 
 const contentRouter = require("./content.routes.js");
 router.use("/content", isLoggedIn, contentRouter);
