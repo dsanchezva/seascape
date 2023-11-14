@@ -3,7 +3,9 @@
 </div>
 
 <div>
-  <h3>{{this.user.username}}</h3>
-   <p>{{this.comment}}</p> 
-   <a href=""><button>Edit comment</button></a>  
+   <form action="/comment/edit/{{this.commentToCheck._id}}" method="post">
+   <label for="comment">Comment:</label>
+    <textarea name="comment" cols="30" rows="10">{{this.commentToCheck.comment}}</textarea>
+   <a href="/content/{{this.beach._id}}/beachInfo"><button>Edit comment</button></a>
+   </form>  
 </div>

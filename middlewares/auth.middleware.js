@@ -39,5 +39,5 @@ module.exports = {
   isLoggedIn,
   infoLocals,
   isAdmin,
-  infoLocalsAdmin,
+  infoLocalsAdmin
 };

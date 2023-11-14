@@ -66,8 +66,13 @@ router.get("/:id/beachInfo", async (req, res, next) => {
     const allComment = await Comment.find({ beach: req.params.id }).populate(
       "user"
     );
-
-    // const user = await User.findById(comment.user).select({ username: 1 });
+    allComment.forEach((comment) => {
+      if (comment.user._id == req.session.user._id) {
+        comment.isOwner = true;
+      } else {
+        comment.isOwner = false;
+      }
+    });
     res.render("content/single.hbs", { beach, allComment });
   } catch (err) {
     next(err);

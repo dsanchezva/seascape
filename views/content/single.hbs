@@ -31,6 +31,13 @@
     </form>
     {{#each this.allComment}}
    <h3>{{this.user.username}}</h3>
-   <p>{{this.comment}}</p> 
+   <p>{{this.comment}}</p>
+    {{!-- aqui no podemos poner this.comment porque comment es un string del modelo y deberiamos cambiarlo a futuro por text --}}
+    {{#if isOwner}}
+   <a href="/comment/edit/{{this._id}}"><button>Edit coment</button></a>
+   <form action="/comment/delete/{{this._id}}" method="post">
+   <button>Delete coment</button>
+   </form>
+   {{/if}}
     {{/each}}
 </div>
