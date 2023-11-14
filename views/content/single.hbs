@@ -29,9 +29,8 @@
     <button>Send comment</button>
     
     </form>
-    {{#each this.comment}}
-   <p>
- {{this}}
-   </p> 
+    {{#each this.allComment}}
+   <h3>{{this.user.username}}</h3>
+   <p>{{this.comment}}</p> 
     {{/each}}
 </div>
