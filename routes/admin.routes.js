@@ -17,10 +17,11 @@ router.post("/", uploader.single("image"), async (req, res, next) => {
     difficultyAccess,
     entertainment,
   } = req.body;
-  const beachPic = "";
-  if (req.file !== undefined) {
+  let beachPic = "";
+  if (req.file) {
     beachPic = req.file.path;
   }
+  console.log("IMPRIMIENDO", req.body, req.file);
   //check if all the values are not empty
   if (
     name === "" ||

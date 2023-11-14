@@ -1,12 +1,12 @@
 <div>
   {{>navBarPartial }}
 </div>
-<div>
+<div class="create-form">
   <h3>Crear playas</h3>
-  <form action="/admin" method="post">
-     <div class="input-group input-group-sm mb-3">
-      <span class="input-group-text" id="inputGroup-sizing-sm">Name: </span>
-      <input type="text" name="name" value="{{this.name}}" />
+  <form action="/admin" method="post" enctype="multipart/form-data">
+     <div class="form-floating mb-3">
+      <label for="floatingInput" >Name: </label>
+      <input type="text" name="name" value="{{this.name}}"class="form-control" id="floatingInput"/>
     </div>
     <br />
     <label for="region">Region: </label>
@@ -29,8 +29,10 @@
     <option value="ciudad autonoma de melilla">ciudad autonoma de melilla</option>
     </select>
     <br />
-    <label for="description">Description: </label>
-    <textarea name="description" cols="30" rows="10" value="{{this.description}}"></textarea>
+    <div class="form-floating">
+    <label for="floatingTextarea2">Description: </label>
+    <textarea name="description" cols="30" rows="10" value="{{this.description}}" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+    </div>
     <br />
       <div class="input-group input-group-sm mb-3">
         <label name="location" class="input-group-text" id="inputGroup-sizing-sm">Latitude: </label>
@@ -58,12 +60,17 @@
       <option value="kayak">kayak</option>
     </select>
     <br />
-    <label for="image">Beach image: </label>
-    <input type="file" name="image">
+    <div class="input-group mb-3">
+    <label for="image" class="input-group-text" for="inputGroupFile02">Beach image: </label>
+    <input type="file" name="image" class="form-control" id="inputGroupFile02">
+    </div>
     <br>
-    <button>Create</button>
+    <button type="button" class="btn btn-primary btn-lg">Create</button>
+    <br>
     {{#if this.errMessage}}
+    <div class="alert alert-danger" role="alert">
     <p>{{this.errMessage}}</p>
+    </div>
     {{/if}}
   </form>
 </div>
