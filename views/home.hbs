@@ -1,4 +1,9 @@
 <div>
-  <h1>{{appTitle}}</h1>
-  <h3>Home</h3>
+  {{#if sessionActive}}
+    <h1><a href="/content">SEA SPACE</a></h1>
+
+  {{else}}
+
+    <h1><a href="/user/login">SEA SPACE</a></h1>
+  {{/if}}
 </div>
