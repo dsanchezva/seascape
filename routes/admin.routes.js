@@ -173,6 +173,10 @@ router.post("/delete/:id", async (req, res, next) => {
 //Upload picture
 
 router.post("/upload/:id", uploader.single("image"), async (req, res, next) => {
+  if (!req.file) {
+    res.status(400).redirect(`/content/${req.params.id}/beachInfo`);
+    return;
+  }
   try {
     await Beach.findByIdAndUpdate(req.params.id, {
       beachPic: req.file.path,

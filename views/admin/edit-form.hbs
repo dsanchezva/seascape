@@ -1,52 +1,111 @@
-  <div>
+<div>
   {{>navBarPartial }}
 </div>
-  <h3>Editar playas</h3>
+<div class="edit-form">
+  <h3>EDIT BEACH</h3>
   <form action="/admin/edit/{{this.beachToEdit._id}}" method="post">
-    <label for="name">Name: </label>
-    <input type="text" name="name" value="{{this.beachToEdit.name}}" />
+    <div class="form-floating mb-3">
+      <label for="floatingInput">Name: </label>
+      <input
+        type="text"
+        name="name"
+        value="{{this.beachToEdit.name}}"
+        class="form-control"
+        id="floatingInput"
+      />
+    </div>
     <br />
     <label for="region">Region: </label>
-    <select name="region">
-    <option value="{{this.beachToEdit.region}}" selected>{{this.beachToEdit.region}}</option>
-    <option>--------------------</option>
-    <option value="andalucia">andalucia</option>
-    <option value="asturias">asturias</option>
-    <option value="baleares">baleares</option>
-    <option value="canarias">canarias</option>
-    <option value="cantabria">cantabria</option>
-    <option value="cataluña">cataluña</option>
-    <option value="comunidad valenciana">comunidad valenciana</option>
-    <option value="extremadura">extremadura</option>
-    <option value="galicia">galicia</option>
-    <option value="comunidad de madrid">comunidad de madrid</option>
-    <option value="region de murcia">region de murcia</option>
-    <option value="pais vasco">pais vasco</option>
-    <option value="ciudad autonoma de ceuta">ciudad autonoma de ceuta</option>
-    <option value="ciudad autonoma de melilla">ciudad autonoma de melilla</option>
+    <select
+      name="region"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option
+        value="{{this.beachToEdit.region}}"
+        selected
+      >{{this.beachToEdit.region}}</option>
+      <option>--------------------</option>
+      <option value="andalucia">andalucia</option>
+      <option value="asturias">asturias</option>
+      <option value="baleares">baleares</option>
+      <option value="canarias">canarias</option>
+      <option value="cantabria">cantabria</option>
+      <option value="cataluña">cataluña</option>
+      <option value="comunidad valenciana">comunidad valenciana</option>
+      <option value="extremadura">extremadura</option>
+      <option value="galicia">galicia</option>
+      <option value="comunidad de madrid">comunidad de madrid</option>
+      <option value="region de murcia">region de murcia</option>
+      <option value="pais vasco">pais vasco</option>
+      <option value="ciudad autonoma de ceuta">ciudad autonoma de ceuta</option>
+      <option value="ciudad autonoma de melilla">ciudad autonoma de melilla</option>
     </select>
     <br />
-    <label for="description">Description: </label>
-    <textarea name="description" cols="30" rows="10">{{this.beachToEdit.description}}</textarea>
+    <div class="form-floating">
+      <label for="floatingTextarea2">Description: </label>
+      <textarea
+        name="description"
+        cols="30"
+        rows="30"
+        class="form-control"
+        id="floatingTextarea2"
+        style="height: 100px"
+      >{{this.beachToEdit.description}}</textarea>
+    </div>
     <br />
-    <label for="location">Latitude: </label>
-    <input type="number" name="location" value="{{this.latitude}}" selected/>
-     <label for="location">Longitude: </label>
-    <input type="number" name="location" value="{{this.longitude}}" selected/>
+    <div class="input-group input-group-sm mb-3">
+      <label
+        for="location"
+        class="input-group-text"
+        id="inputGroup-sizing-sm"
+      >Latitude: </label>
+      <input
+        type="number"
+        step=".01"
+        name="location"
+        value="{{this.latitude}}"
+        selected
+      />
+      <label
+        for="location"
+        class="input-group-text"
+        id="inputGroup-sizing-sm"
+      >Longitude: </label>
+      <input
+        type="number"
+        step=".01"
+        name="location"
+        value="{{this.longitude}}"
+        selected
+      />
+    </div>
     <br />
     <label for="difficultyAccess">Access dificulty: </label>
-    <select name="difficultyAccess">
-    <option value="{{this.beachToEdit.difficultyAccess}}" selected>{{this.beachToEdit.difficultyAccess}}</option>
-    <option>--------------------</option>
-    <option value="low">low</option>
-    <option value="medium">medium</option>
-    <option value="high">high</option>
+    <select
+      name="difficultyAccess"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option
+        value="{{this.beachToEdit.difficultyAccess}}"
+        selected
+      >{{this.beachToEdit.difficultyAccess}}</option>
+      <option>--------------------</option>
+      <option value="low">low</option>
+      <option value="medium">medium</option>
+      <option value="high">high</option>
     </select>
     <br />
     <label for="entertainment">Entrertainment: </label>
-    <select name="entertainment" multiple>
+    <select
+      name="entertainment"
+      class="form-select"
+      aria-label="multiple select example"
+      multiple
+    >
       {{#each this.beachToEdit.entertainment}}
-      <option value="{{this}}" selected disabled>{{this}}</option>
+        <option value="{{this}}" selected disabled>{{this}}</option>
       {{/each}}
       <option>--------------------</option>
       <option value="surf">surf</option>
@@ -55,16 +114,25 @@
       <option value="kayak">kayak</option>
     </select>
     <br />
-    <button>Edit</button>
+    <button class="btn btn-primary btn-lg">Edit</button>
     {{#if this.errMessage}}
-    <p>{{this.errMessage}}</p>
+     <div class="alert alert-danger" role="alert">
+      <p>{{this.errMessage}}</p>
+      </div>
     {{/if}}
   </form>
-    <form action="/admin/upload/{{this.beachToEdit._id}}" method="post" enctype="multipart/form-data">
-    <label for="image">Beach image: </label>
-    <input type="file" name="image">
-    <button>Upload Image</button>
-    
-    </form>
+  <form
+    action="/admin/upload/{{this.beachToEdit._id}}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+  <div class="input-group mb-3">
+    <label for="image" class="input-group-text" for="inputGroupFile02">Beach image: </label>
+    <input type="file" name="image" class="form-control" id="inputGroupFile02"/>
+    </div>
     <br>
+    <button class="btn btn-primary btn-lg">Upload Image</button>
+
+  </form>
+  <br />
 </div>
