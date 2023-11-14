@@ -8,6 +8,7 @@ require("./db");
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
 const express = require("express");
+const path = require("path")
 
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
@@ -16,12 +17,15 @@ hbs.registerPartials(__dirname + "/views/partials");
 
 const app = express();
 
+// Configuración para servir archivos estáticos (imágenes, CSS, etc.)
+app.use(express.static(path.join(__dirname, "public")));
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
 // default value for title local
 const capitalize = require("./utils/capitalize");
-const projectName = "Sea Space";
+const projectName = "Sea Scape";
 
 app.locals.appTitle = `${capitalize(projectName)}`;
 
