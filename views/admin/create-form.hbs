@@ -1,51 +1,94 @@
 <div>
   {{>navBarPartial }}
 </div>
-<div>
+<div class="create-form">
   <h3>Crear playas</h3>
-  <form action="/admin" method="post">
-    <label for="name">Name: </label>
-    <input type="text" name="name" value="{{this.name}}" />
+  <form action="/admin" method="post" enctype="multipart/form-data">
+    <div class="form-floating mb-3">
+      <label for="floatingInput">Name: </label>
+      <input
+        type="text"
+        name="name"
+        value="{{this.name}}"
+        class="form-control"
+        id="floatingInput"
+      />
+    </div>
     <br />
     <label for="region">Region: </label>
-    <select name="region">
-    <option selected></option>
-    <option>--------------------</option>
-    <option value="andalucia">andalucia</option>
-    <option value="asturias">asturias</option>
-    <option value="baleares">baleares</option>
-    <option value="canarias">canarias</option>
-    <option value="cantabria">cantabria</option>
-    <option value="cataluña">cataluña</option>
-    <option value="comunidad valenciana">comunidad valenciana</option>
-    <option value="extremadura">extremadura</option>
-    <option value="galicia">galicia</option>
-    <option value="comunidad de madrid">comunidad de madrid</option>
-    <option value="region de murcia">region de murcia</option>
-    <option value="pais vasco">pais vasco</option>
-    <option value="ciudad autonoma de ceuta">ciudad autonoma de ceuta</option>
-    <option value="ciudad autonoma de melilla">ciudad autonoma de melilla</option>
+    <select
+      name="region"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option selected></option>
+      <option>--------------------</option>
+      <option value="andalucia">andalucia</option>
+      <option value="asturias">asturias</option>
+      <option value="baleares">baleares</option>
+      <option value="canarias">canarias</option>
+      <option value="cantabria">cantabria</option>
+      <option value="cataluña">cataluña</option>
+      <option value="comunidad valenciana">comunidad valenciana</option>
+      <option value="extremadura">extremadura</option>
+      <option value="galicia">galicia</option>
+      <option value="comunidad de madrid">comunidad de madrid</option>
+      <option value="region de murcia">region de murcia</option>
+      <option value="pais vasco">pais vasco</option>
+      <option value="ciudad autonoma de ceuta">ciudad autonoma de ceuta</option>
+      <option value="ciudad autonoma de melilla">ciudad autonoma de melilla</option>
     </select>
     <br />
-    <label for="description">Description: </label>
-    <textarea name="description" cols="30" rows="10" value="{{this.description}}"></textarea>
+    <div class="form-floating">
+      <label for="floatingTextarea2">Description: </label>
+      <textarea
+        name="description"
+        cols="30"
+        rows="10"
+        value="{{this.description}}"
+        class="form-control"
+        placeholder="Leave a description here"
+        id="floatingTextarea2"
+        style="height: 100px"
+      ></textarea>
+    </div>
     <br />
-    <label for="location">Latitude: </label>
-    <input type="number" name="location"/>
-      <label for="location">Longitude: </label>
-    <input type="number" name="location"/>
+    <div class="input-group input-group-sm mb-3">
+      <label
+        name="location"
+        class="input-group-text"
+        id="inputGroup-sizing-sm"
+      >Latitude: </label>
+      <input type="number" step=".01" name="location" />
+      <label
+        name="location"
+        class="input-group-text"
+        id="inputGroup-sizing-sm"
+      >Longitude: </label>
+      <input type="number" step=".01" name="location" />
+    </div>
     <br />
     <label for="difficultyAccess">Access dificulty: </label>
-    <select name="difficultyAccess">
-    <option selected></option>
-    <option>--------------------</option>
-    <option value="low">low</option>
-    <option value="medium">medium</option>
-    <option value="high">high</option>
+    <select
+      name="difficultyAccess"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option selected></option>
+      <option>--------------------</option>
+      <option value="low">low</option>
+      <option value="medium">medium</option>
+      <option value="high">high</option>
     </select>
     <br />
     <label for="entertainment">Entrertainment: </label>
-    <select name="entertainment" multiple>
+    <select
+      name="entertainment"
+      class="form-select"
+      multiple
+      aria-label="multiple select example"
+      multiple
+    >
       <option selected></option>
       <option>--------------------</option>
       <option value="surf">surf</option>
@@ -54,12 +97,24 @@
       <option value="kayak">kayak</option>
     </select>
     <br />
-    <label for="image">Beach image: </label>
-    <input type="file" name="image">
-    <br>
-    <button>Create</button>
+    <div class="input-group mb-3">
+      <label for="image" class="input-group-text" for="inputGroupFile02">Beach
+        image:
+      </label>
+      <input
+        type="file"
+        name="image"
+        class="form-control"
+        id="inputGroupFile02"
+      />
+    </div>
+    <br />
+    <button type="button" class="btn btn-primary btn-lg">Create</button>
+    <br />
     {{#if this.errMessage}}
-    <p>{{this.errMessage}}</p>
+      <div class="alert alert-danger" role="alert">
+        <p>{{this.errMessage}}</p>
+      </div>
     {{/if}}
   </form>
 </div>

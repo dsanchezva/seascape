@@ -1,18 +1,37 @@
 <div>
   <h3>Access</h3>
+
   <form action="/user/login" method="post">
-  <label for="email">Email: </label>
-  <input type="text" name="email" value="{{this.email}}">
-  <br>
-  <label for="password">Password: </label>
-  <input type="text" name="password" value="{{this.password}}">
-  <br>
-  <button>Log In</button> 
-  {{#if this.errMessage}}
-  <p>{{this.errMessage}}</p>
-  {{/if}} 
+    <div class="form-floating mb-3">
+      <label for="email" for="floatingInput">Email: </label>
+      <input
+        type="text"
+        name="email"
+        value="{{this.email}}"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+      />
+    </div>
+    <br />
+    <div class="form-floating">
+      <label for="password">Password: </label>
+      <input
+        name="password"
+        value="{{this.password}}"
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+    </div>
+    <br />
+    <button class="btn btn-primary btn-lg">Log In</button>
+    {{#if this.errMessage}}
+      <p>{{this.errMessage}}</p>
+    {{/if}}
   </form>
   <form action="/user/signup" method="post">
-  <button>Sign Up</button>
+    <button class="btn btn-primary btn-lg">Sign Up</button>
   </form>
 </div>
