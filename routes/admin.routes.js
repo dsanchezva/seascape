@@ -1,23 +1,26 @@
 const express = require("express");
 const Beach = require("../models/Beach.model.js");
 const router = express.Router();
-const uploader = require("../middlewares/cloudinary.middleware.js")
+const uploader = require("../middlewares/cloudinary.middleware.js");
 
 //GET /admin
 router.get("/", (req, res, next) => {
   res.render("admin/create-form.hbs");
 });
 //POST /admin
-router.post("/", uploader.single("image"),  async (req, res, next) => {
+router.post("/", uploader.single("image"), async (req, res, next) => {
   const {
     name,
     region,
     description,
     location,
     difficultyAccess,
-    entertainment,    
+    entertainment,
   } = req.body;
-  const beachPic = req.file.path;
+  const beachPic = "";
+  if (req.file !== undefined) {
+    beachPic = req.file.path;
+  }
   //check if all the values are not empty
   if (
     name === "" ||
@@ -72,13 +75,12 @@ router.post("/", uploader.single("image"),  async (req, res, next) => {
 
 // GET "/edit/:id"
 router.get("/edit/:id", async (req, res, next) => {
-  
   try {
     const beachToEdit = await Beach.findById(req.params.id);
-    const {location} = beachToEdit
-    const latitude = location[0]
-    const longitude = location[1]
-    res.render("admin/edit-form.hbs", { beachToEdit, latitude, longitude});
+    const { location } = beachToEdit;
+    const latitude = location[0];
+    const longitude = location[1];
+    res.render("admin/edit-form.hbs", { beachToEdit, latitude, longitude });
   } catch (err) {
     next(err);
   }
@@ -95,8 +97,8 @@ router.post("/edit/:id", async (req, res, next) => {
     entertainment,
     beachPic,
   } = req.body;
-  const latitude = location[0]
-  const longitude = location[1]
+  const latitude = location[0];
+  const longitude = location[1];
   //check if all the values are not empty
   if (
     name === "" ||
@@ -109,7 +111,6 @@ router.post("/edit/:id", async (req, res, next) => {
     res.status(400).render("admin/edit-form.hbs", {
       errMessage: "All field must be filled up",
       beachToEdit: {
-
         name,
         region,
         description,
@@ -119,7 +120,7 @@ router.post("/edit/:id", async (req, res, next) => {
         beachPic,
       },
       latitude,
-      longitude
+      longitude,
     });
     return;
   }
@@ -128,7 +129,6 @@ router.post("/edit/:id", async (req, res, next) => {
     res.status(400).render("admin/edit-form.hbs", {
       errMessage: "Coordintates must have rigth format",
       beachToEdit: {
-
         name,
         region,
         description,
@@ -138,7 +138,7 @@ router.post("/edit/:id", async (req, res, next) => {
         beachPic,
       },
       latitude,
-      longitude
+      longitude,
     });
     return;
   }
@@ -172,13 +172,11 @@ router.post("/delete/:id", async (req, res, next) => {
 //Upload picture
 
 router.post("/upload/:id", uploader.single("image"), async (req, res, next) => {
- 
   try {
-    
     await Beach.findByIdAndUpdate(req.params.id, {
-      beachPic: req.file.path
-    })
-    res.redirect(`/content/${req.params.id}/beachInfo`)
+      beachPic: req.file.path,
+    });
+    res.redirect(`/content/${req.params.id}/beachInfo`);
   } catch (err) {
     next(err);
   }

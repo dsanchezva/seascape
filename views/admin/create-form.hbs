@@ -4,11 +4,13 @@
 <div>
   <h3>Crear playas</h3>
   <form action="/admin" method="post">
-    <label for="name">Name: </label>
-    <input type="text" name="name" value="{{this.name}}" />
+     <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Name: </span>
+      <input type="text" name="name" value="{{this.name}}" />
+    </div>
     <br />
     <label for="region">Region: </label>
-    <select name="region">
+    <select name="region" class="form-select" aria-label="Default select example">
     <option selected></option>
     <option>--------------------</option>
     <option value="andalucia">andalucia</option>
@@ -30,13 +32,15 @@
     <label for="description">Description: </label>
     <textarea name="description" cols="30" rows="10" value="{{this.description}}"></textarea>
     <br />
-    <label for="location">Latitude: </label>
-    <input type="number" name="location"/>
-      <label for="location">Longitude: </label>
-    <input type="number" name="location"/>
+      <div class="input-group input-group-sm mb-3">
+        <label name="location" class="input-group-text" id="inputGroup-sizing-sm">Latitude: </label>
+        <input type="number" step=".01" name="location"/>
+        <label name="location" class="input-group-text" id="inputGroup-sizing-sm">Longitude: </label>
+        <input type="number" step=".01" name="location"/>
+      </div>
     <br />
     <label for="difficultyAccess">Access dificulty: </label>
-    <select name="difficultyAccess">
+    <select name="difficultyAccess" class="form-select" aria-label="Default select example">
     <option selected></option>
     <option>--------------------</option>
     <option value="low">low</option>
@@ -45,7 +49,7 @@
     </select>
     <br />
     <label for="entertainment">Entrertainment: </label>
-    <select name="entertainment" multiple>
+    <select name="entertainment" class="form-select" multiple aria-label="multiple select example" multiple>
       <option selected></option>
       <option>--------------------</option>
       <option value="surf">surf</option>
