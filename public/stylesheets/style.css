@@ -1,12 +1,32 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+}
+body.with-background{
+  background-image: url(../images/wallpaper.png) ;
+  background-size: cover;
 }
 
 a {
-  color: #00b7ff;
+  color: rgb(57, 57, 117);
+  text-decoration: none;
 }
 
 h1 {
   color: 15px;
+}
+
+.margin {
+  font-size: 40px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  
+}
+
+.list-group {
+  font-size: 20px;
+  margin-bottom: 30px;
+  
+  
 }
