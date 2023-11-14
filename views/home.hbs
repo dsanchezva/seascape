@@ -1,9 +1,14 @@
-<div>
-  {{#if sessionActive}}
-    <h1><a href="/content">SEA SPACE</a></h1>
-
-  {{else}}
-
-    <h1><a href="/user/login">SEA SPACE</a></h1>
-  {{/if}}
+<div class="text-center">
+  <div>
+    <img src="/images/sea-scape-logo.gif" alt="logo-gif" class="rounded mx-auto d-block" id="logo-gif">
+  </div>
+  <div style="margin-top: 10px;">
+    {{#if sessionActive}}
+    <a href="/content"><button type="button" class="btn btn-primary btn-warning"><img class="rounded mx-auto d-block"
+          src="/images/sea-scape-name.png" alt="name-app"></button></a>
+    {{else}}
+    <a href="/user/login"><button type="button" class="btn btn-primary btn-warning"><img class="rounded mx-auto d-block"
+          src="/images/sea-scape-name.png" alt="name-app"></button></a>
+    {{/if}}
+  </div>
 </div>
