@@ -73,7 +73,13 @@ router.get("/:id/beachInfo", async (req, res, next) => {
         comment.isOwner = false;
       }
     });
-    res.render("content/single.hbs", { beach, allComment });
+    console.log(beach);
+    res.render("content/single.hbs", {
+      beach,
+      allComment,
+      lat: beach.location[0],
+      lon: beach.location[1],
+    });
   } catch (err) {
     next(err);
   }
