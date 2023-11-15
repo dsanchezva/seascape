@@ -1,18 +1,24 @@
 <div>
   {{>navBarPartial }}
 </div>
-<div>
-  <h3>Hello {{this.userToSend.username}}</h3>
+<div class="profile-content">
+  <h1>Hello {{this.userToSend.username}}</h1>
   
-    <h2>These are all your comments:</h2>
-  <div>
+    <h4>These are all your comments:</h4>
+  
+    <div class="all-comment" >
   {{#each this.allCommentUser}}
-    <h4>{{this.beach.name}}</h4>
-    <p>{{this.comment}}</p>
-    <a href="/comment/edit/{{this._id}}"><button class="btn btn-primary">Edit coment</button></a>
-   <form action="/comment/delete/{{this._id}}" method="post">
-   <button class="btn btn-danger">Delete coment</button>
-   </form>
+    <div class="each-comment">
+      <h3>{{this.beach.name}}</h>
+      <p>{{this.comment}}</p>
+      <div class="btn-comment">
+        <a href="/comment/edit/{{this._id}}"><button class="btn btn-primary">Edit coment</button></a>
+        <form action="/comment/delete/{{this._id}}" method="post">
+          <button class="btn btn-danger">Delete coment</button>
+        </form>
+    </div>
+   </div>
   {{/each}}
   </div>
+  
 </div>

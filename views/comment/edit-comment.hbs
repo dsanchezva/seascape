@@ -1,11 +1,13 @@
 <div>
   {{>navBarPartial }}
 </div>
-
-<div>
+<div class="edit-comment">
+  <h3>Edit the comment:</h3>
+<div class="mb-3">
    <form action="/comment/edit/{{this.commentToCheck._id}}" method="post">
-   <label for="comment">Comment:</label>
-    <textarea name="comment" cols="30" rows="10">{{this.commentToCheck.comment}}</textarea>
+   <label for="comment" class="form-label">Comment:</label>
+    <textarea name="comment" cols="30" rows="10" class="form-control" id="exampleFormControlTextarea1">{{this.commentToCheck.comment}}</textarea>
    <a href="/content/{{this.beach._id}}/beachInfo"><button class="btn btn-primary">Edit comment</button></a>
    </form>  
+</div>
 </div>

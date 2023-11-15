@@ -36,7 +36,7 @@ router.get("/allRegion", async (req, res, next) => {
   }
 });
 
-// GET "/content/:region"
+// GET "/content/:region/beachRegion"
 router.get("/:region/beachRegion", async (req, res, next) => {
   try {
     const beachs = await Beach.find({ region: req.params.region }).select({
@@ -53,7 +53,7 @@ router.get("/:region/beachRegion", async (req, res, next) => {
   }
 });
 
-// Get "/content/:id"
+// Get "/content/:id/beachInfo"
 router.get("/:id/beachInfo", async (req, res, next) => {
   try {
     const beach = await Beach.findById(req.params.id);
