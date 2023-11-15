@@ -79,4 +79,17 @@ router.get("/:id/beachInfo", async (req, res, next) => {
   }
 });
 
+//GET "/content/profile/:id"
+router.get("/profile", async (req, res, next) => {
+  try {
+    const userToSend = await User.findById(req.session.user._id);
+    const allCommentUser = await Comment.find({
+      user: req.session.user._id,
+    }).populate("beach");
+
+    res.render("content/user-profile.hbs", { userToSend, allCommentUser });
+  } catch (err) {
+    next(err);
+  }
+});
 module.exports = router;
