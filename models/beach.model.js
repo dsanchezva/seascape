@@ -9,7 +9,7 @@ const beachSchema = new mongoose.Schema({
     type: String,
     require: true,
     enum: [
-      "Andalucia",
+      "Andalucía",
       "Principado de Asturias",
       "Baleares",
       "Canarias",
@@ -19,10 +19,10 @@ const beachSchema = new mongoose.Schema({
       "Extremadura",
       "Galicia",
       "Comunidad de Madrid",
-      "Region de Murcia",
-      "Pais Vasco",
-      "Ciudad autonoma de Ceuta",
-      "Ciudad autonoma de Melilla",
+      "Región de Murcia",
+      "País Vasco",
+      "Ciudad Autónoma de Ceuta",
+      "Ciudad Autónoma de Melilla",
     ],
   },
   description: {
@@ -35,12 +35,12 @@ const beachSchema = new mongoose.Schema({
   },
   difficultyAccess: {
     type: String,
-    enum: ["low", "medium", "high"],
+    enum: ["Low", "Medium", "High"],
     required: true,
   },
   entertainment: {
     type: [String],
-    enum: ["surf", "nudism", "diving", "kayak", ""],
+    enum: ["Surf", "Nudism", "Diving", "Kayak", ""],
   },
   beachPic: String,
   // ratingUser: [

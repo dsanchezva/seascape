@@ -20,9 +20,7 @@ h1 {
   font-size: 40px;
   margin-top: 60px;
   margin-bottom: 50px;
-  text-align: center;
-  color: blue;
-  
+   
 }
 
 .list-group {
@@ -75,4 +73,12 @@ h1 {
 .info-beach-container img {
   width: 600px;
   border-radius: 15px;
+}
+.margin2{
+  font-size: 30px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.margin3{
+  margin-bottom: 10px;
 }
