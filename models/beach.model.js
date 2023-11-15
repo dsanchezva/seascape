@@ -1,6 +1,6 @@
-const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
 
-const beachSchema = new Schema({
+const beachSchema = new mongoose.Schema({
   name: {
     type: String,
     require: true,
@@ -51,5 +51,5 @@ const beachSchema = new Schema({
   // ],
 });
 
-const Beach = model("Beach", beachSchema);
+const Beach = mongoose.model("Beach", beachSchema);
 module.exports = Beach;
