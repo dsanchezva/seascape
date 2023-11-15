@@ -5,12 +5,6 @@ const User = require("../models/User.model.js");
 const Comment = require("../models/comment.model.js");
 
 router.get("/", async (req, res, next) => {
-  const allBeachs = await Beach.find().select({ beachPic: 1 });
-  // const randomOne = allBeachs[Matth.Floor(Math.random() * allBeachs.length)];
-  // const randomTwo = allBeachs[Matth.Floor(Math.random() * allBeachs.length)];
-  // const randomThree = allBeachs[Matth.Floor(Math.random() * allBeachs.length)];
-  // console.log(randomOne);
-
   res.render("content/main-page.hbs");
   try {
   } catch (err) {

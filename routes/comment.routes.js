@@ -44,7 +44,6 @@ router.get("/edit/:id", async (req, res, next) => {
 // POST "/comment/edit/:id"
 router.post("/edit/:id", async (req, res, next) => {
   const { comment } = req.body;
-  console.log(req.body);
   const commentId = req.params.id;
   try {
     const commentToEdit = await Comment.findByIdAndUpdate(commentId, {

@@ -125,6 +125,7 @@ router.post("/signup", async (req, res, next) => {
       email,
       password: cryptedPass,
     });
+
     res.redirect("/user/login");
   } catch (err) {
     next(err);
