@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Beach = require("../models/Beach.model.js");
+const Beach = require("../models/beach.model.js");
 const User = require("../models/User.model.js");
-const Comment = require("../models/Comment.model.js");
+const Comment = require("../models/comment.model.js");
 
 router.get("/", async (req, res, next) => {
   const allBeachs = await Beach.find().select({ beachPic: 1 });
@@ -73,10 +73,29 @@ router.get("/:id/beachInfo", async (req, res, next) => {
         comment.isOwner = false;
       }
     });
-    res.render("content/single.hbs", { beach, allComment });
+    console.log(beach);
+    res.render("content/single.hbs", {
+      beach,
+      allComment,
+      lat: beach.location[0],
+      lon: beach.location[1],
+    });
   } catch (err) {
     next(err);
   }
 });
 
+//GET "/content/profile/:id"
+router.get("/profile", async (req, res, next) => {
+  try {
+    const userToSend = await User.findById(req.session.user._id);
+    const allCommentUser = await Comment.find({
+      user: req.session.user._id,
+    }).populate("beach");
+
+    res.render("content/user-profile.hbs", { userToSend, allCommentUser });
+  } catch (err) {
+    next(err);
+  }
+});
 module.exports = router;

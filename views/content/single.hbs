@@ -22,6 +22,9 @@
     {{/if}}
   </div>
 </div>
+
+<div id="map"></div>
+
 <div>
   <form action="/comment/create/{{this.beach._id}}" method="post">
     <label for="comment">Comments: </label>
@@ -34,10 +37,23 @@
    <p>{{this.comment}}</p>
     {{!-- aqui no podemos poner this.comment porque comment es un string del modelo y deberiamos cambiarlo a futuro por text --}}
     {{#if isOwner}}
-   <a href="/comment/edit/{{this._id}}"><button>Edit coment</button></a>
+   <a href="/comment/edit/{{this._id}}"><button class="btn btn-primary">Edit coment</button></a>
    <form action="/comment/delete/{{this._id}}" method="post">
-   <button>Delete coment</button>
+   <button class="btn btn-danger">Delete coment</button>
    </form>
    {{/if}}
     {{/each}}
 </div>
+
+
+<script>
+  let map = L.map('map').setView([{{{this.lat}}},{{{this.lon}}}], 13)
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([{{{this.lat}}},{{{this.lon}}}]).addTo(map)
+    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+    .openPopup();
+</script>
