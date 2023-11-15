@@ -2,10 +2,10 @@
   {{>navBarPartial }}
 </div>
 <div class="create-form">
-  <h3>Crear playas</h3>
+  <h3 class="margin2">Create Beaches</h3>
   <form action="/admin" method="post" enctype="multipart/form-data">
+      <label for="floatingInput" class="margin3">Name: </label>
     <div class="form-floating mb-3">
-      <label for="floatingInput">Name: </label>
       <input
         type="text"
         name="name"
@@ -15,7 +15,7 @@
       />
     </div>
     <br />
-    <label for="region">Region: </label>
+    <label for="region" class="margin3">Region: </label>
     <select
       name="region"
       class="form-select"
@@ -23,24 +23,24 @@
     >
       <option selected></option>
       <option>--------------------</option>
-      <option value="andalucia">andalucia</option>
-      <option value="asturias">asturias</option>
-      <option value="baleares">baleares</option>
-      <option value="canarias">canarias</option>
-      <option value="cantabria">cantabria</option>
-      <option value="cataluña">cataluña</option>
-      <option value="comunidad valenciana">comunidad valenciana</option>
-      <option value="extremadura">extremadura</option>
-      <option value="galicia">galicia</option>
-      <option value="comunidad de madrid">comunidad de madrid</option>
-      <option value="region de murcia">region de murcia</option>
-      <option value="pais vasco">pais vasco</option>
-      <option value="ciudad autonoma de ceuta">ciudad autonoma de ceuta</option>
-      <option value="ciudad autonoma de melilla">ciudad autonoma de melilla</option>
+      <option value="Andalucía">Andalucía</option>
+      <option value="Asturias">Asturias</option>
+      <option value="Baleares">Baleares</option>
+      <option value="Canarias">Canarias</option>
+      <option value="Cantabria">Cantabria</option>
+      <option value="Cataluña">Cataluña</option>
+      <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+      <option value="Extremadura">Extremadura</option>
+      <option value="Galicia">Galicia</option>
+      <option value="Comunidad de Madrid">Comunidad de Madrid</option>
+      <option value="Región de Murcia">Región de Murcia</option>
+      <option value="País Vasco">País Vasco</option>
+      <option value="Ciudad Autónoma de Ceuta">Ciudad Autónoma de Ceuta</option>
+      <option value="Ciudad Autónoma de Melilla">Ciudad Autónoma de Melilla</option>
     </select>
     <br />
+      <label for="floatingTextarea2" class="margin3">Description: </label>
     <div class="form-floating">
-      <label for="floatingTextarea2">Description: </label>
       <textarea
         name="description"
         cols="30"
@@ -68,7 +68,7 @@
       <input type="number" step=".01" name="location" />
     </div>
     <br />
-    <label for="difficultyAccess">Access dificulty: </label>
+    <label for="difficultyAccess" class="margin3">Access dificulty: </label>
     <select
       name="difficultyAccess"
       class="form-select"
@@ -76,12 +76,12 @@
     >
       <option selected></option>
       <option>--------------------</option>
-      <option value="low">low</option>
-      <option value="medium">medium</option>
-      <option value="high">high</option>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
     </select>
     <br />
-    <label for="entertainment">Entrertainment: </label>
+    <label for="entertainment" class="margin3">Entertainment: </label>
     <select
       name="entertainment"
       class="form-select"
@@ -91,10 +91,10 @@
     >
       <option selected></option>
       <option>--------------------</option>
-      <option value="surf">surf</option>
-      <option value="nudism">nudism</option>
-      <option value="diving">diving</option>
-      <option value="kayak">kayak</option>
+      <option value="Surf">Surf</option>
+      <option value="Nudism">Nudism</option>
+      <option value="Diving">Diving</option>
+      <option value="Kayak">Kayak</option>
     </select>
     <br />
     <div class="input-group mb-3">
@@ -109,7 +109,7 @@
       />
     </div>
     <br />
-    <button type="button" class="btn btn-primary btn-lg">Create</button>
+    <button class="btn btn-primary btn-lg">Create</button>
     <br />
     {{#if this.errMessage}}
       <div class="alert alert-danger" role="alert">

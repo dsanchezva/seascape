@@ -1,94 +1,94 @@
 [
   {
     "name": "Los Nardos",
-    "region": "Andalucia",
+    "region": "Andalucía",
     "description": "Los Nardos Beach, adorned with the Blue Flag, is a medium-sized coastal gem where rocks, gravel, and sand intermingle, offering a tranquil escape from tourist crowds. Stretching 500 meters in length and 20 meters in width, it is nestled in a dune environment, featuring a blend of sandy shores, pebbles, rocks, and gravel. With moderate waves, this secluded beach maintains a low occupancy level, providing an isolated and natural setting for those seeking a peaceful coastal retreat.",
     "location": [
       37.335424349813806,
       -1.6911077967656016
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "nudism",
-      "diving",
-      "kayak"
+      "Surf",
+      "Nudism",
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/6/2/9/4erjey4yokrf3vfqsjmzbehnom_1000.webp"
   },
   {
     "name": "Zahara de los Atunes",
-    "region": "Andalucia",
+    "region": "Andalucía",
     "description": "Zahara de los Atunes Beach proudly flies the Blue Flag, spanning from Zahara to Cape Plata and named after the charming La Atlanterra development. With a generous length of 1600 meters and a width of 70 meters, this urban beach boasts fine golden sand. Conditions for swimming include moderate waves and occasional gusts, while its semi-urban setting provides a lively atmosphere with high occupancy. Not designated as a nudist beach, Zahara de los Atunes offers a vibrant coastal experience for beachgoers.",
     "location": [
       36.142584007579366,
       -5.856611155600397
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "diving"
+      "Surf",
+      "Diving"
     ],
     "beachPic": "https://upload.wikimedia.org/wikipedia/commons/8/85/Zahara_de_los_Atunes_vista_desde_el_cielo.jpg"
   },
   {
     "name": "La Breña",
-    "region": "Andalucia",
+    "region": "Andalucía",
     "description": "Playa La Breña, located 24 km from Córdoba, proudly boasts the Blue Flag, ensuring quality and safety. Stretching 140 meters, it resides in a picturesque reservoir setting, providing a peaceful retreat. With its soft sandy composition, this beach offers a serene and accessible destination to enjoy nature.",
     "location": [
       37.84010388081578,
       -5.048525556830541
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "diving",
-      "kayak"
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/6/2/0/zsjaaiiul7h7pjvagqfjwtzysq_1000.webp"
   },
   {
     "name": "La Herradura",
-    "region": "Andalucia",
+    "region": "Andalucía",
     "description": "La Herradura Beach, proudly flying the Blue Flag, is a family-friendly urban oasis known for its excellent amenities and high-quality services. Spanning 2050 meters in length and 40 meters in width, this beach features a blend of sandy shores and gravel, providing a well-equipped and accessible environment. Awarded the Q for Touristic Quality since 2012, it boasts tranquil waters, a bustling atmosphere with high occupancy, and urban surroundings, complemented by a scenic seaside promenade.",
     "location": [
       36.7321128452201,
       -3.7394750337416505
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "nudism",
-      "diving"
+      "Nudism",
+      "Diving"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/4/0/7/opro6tgfxwgs26mirp4jsjsigi_1000.webp"
   },
   {
     "name": "El Espigón Juan Carlos I",
-    "region": "Andalucia",
+    "region": "Andalucía",
     "description": "El Espigón Juan Carlos I Beach, proudly displaying the Blue Flag, rests against the Juan Carlos I dike in the port of Huelva. It is seamlessly integrated into the Natural Site of Marismas del Odiel. This isolated beach spans an impressive 3000 meters in length and 150 meters in width, featuring a backdrop of dunes and a sandy composition. With moderate waves and low occupancy, El Espigón Juan Carlos I Beach provides a serene coastal experience in a protected area, designated as a Natural Site with abundant vegetation.",
     "location": [
       37.14674877306628,
       -6.895377664016804
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "diving",
-      "kayak"
+      "Surf",
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/5/4/6/rfjyshrn4myeg5gtv4s2fshfyi_1000.webp"
   },
   {
     "name": "Playazo - Chucho",
-    "region": "Andalucia",
+    "region": "Andalucía",
     "description": "Playazo de Rodalquilar, nestled in the Almería desert, is a pristine sandy beach accessed via a dirt road near the town of Rodalquilar. Spanning 400 meters in length and 100 meters in width, this oasis lies within the Cabo de Gata-Níjar Maritime-Terrestrial Natural Park, recently designated as a Biosphere Reserve. Surrounded by mountains, the beach offers tranquil waters, a low level of occupancy, and an isolated, unspoiled environment for a serene coastal experience.",
     "location": [
       36.741737847854914,
       -3.885527273605506
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "diving"
+      "Surf",
+      "Diving"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/9/1/1/4vjljlrhmeadcp7t2a6xdihleu_1000.webp"
   },
@@ -100,10 +100,10 @@
       43.54782857624094,
       -5.590747534654813
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "nudism",
-      "kayak"
+      "Nudism",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/9/5/6/gg7fi4qnuk57t5sp7avuupmswi_1000.webp"
   },
@@ -115,10 +115,10 @@
       39.01546560548206,
       1.584619422072437
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "diving",
-      "kayak"
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://playasbaleares.s3.fr-par.scw.cloud/2020/05/calallenya5-1024x575.jpg"
   },
@@ -130,11 +130,11 @@
       39.349990942929686,
       3.18561347685988
     ],
-    "difficultyAccess": "medium",
+    "difficultyAccess": "Medium",
     "entertainment": [
-      "nudism",
-      "diving",
-      "kayak"
+      "Nudism",
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/2/3/1/yh46jrtyamjm4pv4lv3jqktmya_1000.webp"
   },
@@ -146,11 +146,11 @@
       39.89901816862351,
       4.077354764113588
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "diving",
-      "kayak"
+      "Surf",
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/6/2/8/gjjfzce45q5jecelpcvflgm5wa_1000.webp"
   },
@@ -162,10 +162,10 @@
       28.04505150706205,
       -14.3353515172108
     ],
-    "difficultyAccess": "high",
+    "difficultyAccess": "High",
     "entertainment": [
-      "nudism",
-      "diving"
+      "Nudism",
+      "Diving"
     ],
     "beachPic": "https://www.ifuerteventura.net/media/header/playa-del-matorral.webp"
   },
@@ -177,10 +177,10 @@
       28.17173285064391,
       -15.53951932834938
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "diving",
-      "kayak"
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://ociolanzarote.com/wp-content/imagenes/piscina-natural-tranquila.jpg"
   },
@@ -192,11 +192,11 @@
       28.92770521562338,
       -13.627050175359189
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "nudism",
-      "diving"
+      "Surf",
+      "Nudism",
+      "Diving"
     ],
     "beachPic": "https://turismolanzarote.com/wp-content/uploads/2017/03/MG_7859.jpg"
   },
@@ -208,25 +208,25 @@
       28.30328808625781,
       -13.903219342941519
     ],
-    "difficultyAccess": "medium",
+    "difficultyAccess": "Medium",
     "entertainment": [
-      "diving",
-      "kayak"
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/0/2/9/qvgaon2htw37amls6c2iaeo4vm_500.webp"
   },
   {
     "name": "Timijiraque",
     "region": "Canarias",
-    "description": "Timijiraque Beach, proudly flying the Blue Flag, is located near the Puerto de la Estaca and stands out as one of the few sandy beaches on the island. Spanning 350 meters in length and 20 meters in width, this semi-urban gem is a magnet for surfers, attracting those seeking moderate waves. With a moderate level of occupancy and semi-urban development, the beach features a seaside promenade, creating a pleasant atmosphere for visitors. Noteworthy for its environmental significance, Timijiraque Beach is situated in a protected area, encompassing various designations such as LIC (Site of Community Importance), ZEC (Special Conservation Area), natural habitats of Community Interest, a Protected Landscape, and a Biosphere Reserve, adorned with lush vegetation.",
+    "description": "Timijiraque Beach, proudly flying the Blue Flag, is located near the Puerto de la Estaca and stands out as one of the few sandy beaches on the island. Spanning 350 meters in length and 20 meters in width, this semi-urban gem is a magnet for Surfers, attracting those seeking moderate waves. With a moderate level of occupancy and semi-urban development, the beach features a seaside promenade, creating a pleasant atmosphere for visitors. Noteworthy for its environmental significance, Timijiraque Beach is situated in a protected area, encompassing various designations such as LIC (Site of Community Importance), ZEC (Special Conservation Area), natural habitats of Community Interest, a Protected Landscape, and a Biosphere Reserve, adorned with lush vegetation.",
     "location": [
       27.77012150087426,
       -17.914692202478456
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "diving",
-      "kayak"
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/0/9/2/54nm3xh6ustjp4vi4iq6tt3wty_1000.webp"
   },
@@ -238,11 +238,11 @@
       28.572599814247546,
       -17.89931749188581
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "diving",
-      "kayak"
+      "Surf",
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/4/9/4/yuxjotzvuboj7rwo7oy55sleea_1000.webp"
   },
@@ -254,9 +254,9 @@
       28.05058416720426,
       -16.530239562807203
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "diving"
+      "Diving"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/7/8/5/nmaxe7xyukk33cv7v5t5gml2nq_1000.webp"
   },
@@ -268,10 +268,10 @@
       43.42780514628876,
       -4.093531610690207
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "kayak"
+      "Surf",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/5/1/2/kl2ztrutodj6ih5am43g64r6za_1000.webp"
   },
@@ -283,10 +283,10 @@
       41.13004792388411,
       1.3068505039729263
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "diving",
-      "kayak"
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/1/5/0/l4o4lpvjslbplslkfhqmwm5vey_1000.webp"
   },
@@ -298,10 +298,10 @@
       41.722408934225015,
       2.93827090779915
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "nudism",
-      "diving"
+      "Nudism",
+      "Diving"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/3/5/8/adp4xmkc36yrw7bxiemse6y4dm_1000.webp"
   },
@@ -313,12 +313,12 @@
       40.812348018586704,
       0.7142341093513325
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "nudism",
-      "diving",
-      "kayak"
+      "Surf",
+      "Nudism",
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/6/0/6/ugt43v4tqxooucb7omx4vsgv4i_1000.webp"
   },
@@ -330,10 +330,10 @@
       37.88186981210894,
       -0.7538246320995559
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "diving",
-      "kayak"
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/3/3/1/qo7t7io5rcyqxkjabcwrri4zdi_1000.webp"
   },
@@ -345,11 +345,11 @@
       28.687611314108032,
       -13.832153751153214
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "nudism",
-      "diving",
-      "kayak"
+      "Nudism",
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/7/6/6/3d4ta45fkuxkhajeda62piovwe_1000.webp"
   },
@@ -361,11 +361,11 @@
       38.903624128809106,
       -0.060494900736654644
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "nudism",
-      "diving"
+      "Surf",
+      "Nudism",
+      "Diving"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/2/0/9/rspjdofxgy4izfvyq2cdfh3kba_1000.webp"
   },
@@ -377,10 +377,10 @@
       38.55266254420337,
       -7.289879166584088
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "nudism",
-      "diving"
+      "Nudism",
+      "Diving"
     ],
     "beachPic": "https://www.turismoextremadura.com/viajar/shared/galerias/rrtt/zonas-banno/zona-banno_00032/img/A_PLAYA_CHELES_04.jpg"
   },
@@ -392,10 +392,10 @@
       43.383878222485336,
       -8.405980369309626
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "kayak"
+      "Surf",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/2/9/4/ipdkh2rmv2kbjwhpyatcuqi3uq_1000.webp"
   },
@@ -407,10 +407,10 @@
       43.57146641072773,
       -7.248411949240528
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "diving",
-      "kayak"
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/3/9/8/bf72qeqcpqkk4gwsbat2r3fb6e_1000.webp"
   },
@@ -422,104 +422,104 @@
       42.43107274562778,
       -8.872965089823023
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "nudism",
-      "diving",
-      "kayak"
+      "Nudism",
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/5/4/0/5vssvzgt2tjt3aaa2urze5axwa_1000.webp"
   },
   {
     "name": "Virgen de la Nueva",
     "region": "Comunidad de Madrid",
-    "description": "Virgen de la Nueva Beach, proudly bearing the Blue Flag, is situated in the San Juan Reservoir, approximately 50 km from the capital. It is divided into two areas, one for swimming and another for watercraft. During the peak season, the beach attracts a significant number of visitors. The reservoir offers opportunities for water activities such as canoeing and kayaking, while the surrounding area provides options for hiking and climbing. Restaurants and picnic areas are available, providing an ideal setting to enjoy a meal amidst the natural beauty of the beach, characterized by a reservoir environment with a mix of sand and grass.",
+    "description": "Virgen de la Nueva Beach, proudly bearing the Blue Flag, is situated in the San Juan Reservoir, approximately 50 km from the capital. It is divided into two areas, one for swimming and another for watercraft. During the peak season, the beach attracts a significant number of visitors. The reservoir offers opportunities for water activities such as canoeing and Kayaking, while the surrounding area provides options for hiking and climbing. Restaurants and picnic areas are available, providing an ideal setting to enjoy a meal amidst the natural beauty of the beach, characterized by a reservoir environment with a mix of sand and grass.",
     "location": [
       40.40617004814782,
       -4.3823666423274075
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "nudism",
-      "diving",
-      "kayak"
+      "Surf",
+      "Nudism",
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/6/2/5/g3p2uy4yrixwcv3oce2e26j6ne_1000.webp"
   },
   {
     "name": "Del Mojón",
-    "region": "Region de Murcia",
+    "region": "Región de Murcia",
     "description": "Del Mojón Beach, a semi-urban enclave near the Cabeza del Mojón rock, boasts a low level of occupancy and lacks services. Spanning 100 meters in length and 22 meters in width, this beach features a composition of large stones (bolos) and is known for its moderate waves. With a semi-urbanized setting and the presence of vegetation, Del Mojón offers a tranquil coastal experience, providing a serene escape without the typical amenities found in more developed beaches.",
     "location": [
       37.57634654731207,
       -1.2272949299672946
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "diving",
-      "kayak"
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/9/0/6/5odm7w2yflsoul7ccgv2f2r5qu_1000.webp"
   },
   {
     "name": "Salurriaga",
-    "region": "Pais Vasco",
+    "region": "País Vasco",
     "description": "Salurriaga Beach adorned with the Blue Flag, is one of the pristine beaches within Garaio Park, totaling nearly 3 km in length. Nestled along the reservoir, this beach is surrounded by wooded areas and recreational spaces, providing a serene and scenic environment. Stretching over 2600 meters, Salurriaga Beach features a composition of gravel, offering a unique lakeside experience within the park.",
     "location": [
       42.90669758973986,
       -2.546965442682361
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "nudism",
-      "diving"
+      "Nudism",
+      "Diving"
     ],
     "beachPic": "https://saposyprincesas.elmundo.es/wp-content/uploads/2021/07/playa-de-salurriaga-en-elburgo-alava.jpg"
   },
   {
     "name": "Bakio",
-    "region": "Pais Vasco",
+    "region": "País Vasco",
     "description": "Bakio Beach proudly displaying the Blue Flag, is an urban coastal haven with a high level of occupancy and a delightful seaside promenade. As the longest urban and sports-oriented beach in Vizcaya, spanning 982 meters in length and varying between 35 and 130 meters in width, it holds the EMAS environmental certification. With a sandy composition and moderate waves, Bakio Beach offers a vibrant urbanized setting. Notably, a path from the right bank of the beach leads to the protected area of San Juan de Gaztelugatze, adding a touch of natural beauty to the lively coastal scene.",
     "location": [
       43.43017974247647,
       -2.8068375604337823
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "surf",
-      "diving",
-      "kayak"
+      "Surf",
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/8/9/4/3iif2t56vlckezaqtmjjhhzb2y_1000.webp"
   },
   {
     "name": "Chorrillo",
-    "region": "Ciudad autonoma de Ceuta",
+    "region": "Ciudad Autónoma de Ceuta",
     "description": "l Chorrillo Beach, adorned with the Blue Flag, extends along the southern edge of the city, divided by breakwaters, and borders the monumental area, featuring the moat and one of its walls. Situated close to the beach are the renowned bonitos and volaores of Ceuta. Awarded the Q for Touristic Quality in 2014, this urban beach spans 850 meters in length and 30 meters in width, showcasing tranquil waters. With a high level of occupancy and an urbanized environment complemented by a seaside promenade, El Chorrillo Beach offers a picturesque coastal experience in proximity to Ceuta's historic sites and unique marine life.",
     "location": [
       35.886325710185936,
       -5.3212520781470065
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "diving",
-      "kayak"
+      "Diving",
+      "Kayak"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/6/1/4/fcwhgv2fr2b2rl2bipdbfkw6l4_1000.webp"
   },
   {
     "name": "Los Galápagos",
-    "region": "Ciudad autonoma de Melilla",
+    "region": "Ciudad Autónoma de Melilla",
     "description": "Los Galápagos Beach, distinguished with the Blue Flag, is nestled beneath majestic cliffs. With a length of 200 meters and a width of 30 meters, this coastal gem is surrounded by dramatic cliffs. The beach features sandy shores and is characterized by moderate waves, offering a picturesque setting. Despite being urbanized, Los Galápagos maintains a moderate level of occupancy, providing a serene escape with a touch of natural beauty along the cliffs.",
     "location": [
       35.29494457928063,
       -2.934793122030833
     ],
-    "difficultyAccess": "low",
+    "difficultyAccess": "Low",
     "entertainment": [
-      "nudism",
-      "diving"
+      "Nudism",
+      "Diving"
     ],
     "beachPic": "https://www.inspain.org/imgwbp/playas/8/2/3/alm32x3q7d72lneutzflm7rcum_1000.webp"
   }
