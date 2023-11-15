@@ -2,7 +2,7 @@ const express = require("express");
 // const User = require("../models/User.model");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const User = require("../models/User.model");
+const User = require("../models/user.model");
 
 //GET "user/login"
 router.get("/login", async (req, res, next) => {
