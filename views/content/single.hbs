@@ -1,7 +1,7 @@
 <div>
   {{>navBarPartial }}
 </div>
-<div>
+<div class="info-beach-container">
   <h3>{{this.beach.name}}, {{this.beach.region}}</h3>
   <img src="{{this.beach.beachPic}}" alt="beach-image">
   <p>Description:</p>
@@ -54,6 +54,6 @@
 }).addTo(map);
 
 L.marker([{{{this.lat}}},{{{this.lon}}}]).addTo(map)
-    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+    .bindPopup('Here is the beach')
     .openPopup();
 </script>
