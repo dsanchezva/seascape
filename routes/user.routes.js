@@ -79,7 +79,7 @@ router.post("/signup", async (req, res, next) => {
   if (passwordRegex.test(password) === false) {
     res.status(400).render("user/signup.hbs", {
       errMessage:
-        "password must have 8 characters, at least one upper and one lower case letter and a number",
+        "password must have at least 8 characters, one upper and one lower case letter and a number",
       email,
       username,
     });
@@ -125,8 +125,6 @@ router.post("/signup", async (req, res, next) => {
       email,
       password: cryptedPass,
     });
-
-    console.log("Message sent: %s", info.messageId);
     res.redirect("/user/login");
   } catch (err) {
     next(err);

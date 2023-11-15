@@ -1,19 +1,31 @@
 <div>
-  <h3>Get Register</h3>
+  <h3>Register</h3>
   <form action="/user/signup" method="post">
-  <label for="username">Username: </label>
-  <input type="text" name="username" value="{{this.username}}">
-  <br>
-  <label for="email">Email: </label>
-  <input type="text" name="email" value="{{this.email}}">
-  <br>
-  <label for="password">Password: </label>
-  <input type="text" name="password">
-  <br>
-  <button>Register</button>
-  {{#if this.errMessage}}
-  <p>{{this.errMessage}} </p>
-  {{/if}}
+    <div class="form-floating mb-3">
+      <label for="username">Username: </label>
+      <input type="text" class="form-control" name="username" value="{{this.username}}">
+    </div>
+    <br>
+    <div class="form-floating mb-3">
+      <label for="email">Email: </label>
+      <input type="email" name="email" value="{{this.email}}" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+    </div>
+    <br>
+    <div class="form-floating mb-3">
+      <label for="password">Password: </label>
+      <input name="password" type="password" class="form-control">
+    </div>
+    <br>
+    <div class="text-center">
+      <button class="btn btn-primary btn-lg">Register</button>
+    </div>
   </form>
-
+  <div class="text-center">
+    {{#if this.errMessage}}
+    <div class="alert alert-danger" role="alert">
+      <p>{{this.errMessage}}</p>
+    </div>
+    {{/if}}
+  </div>
 </div>
