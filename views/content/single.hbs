@@ -1,59 +1,70 @@
 <div>
   {{>navBarPartial }}
 </div>
+<div id="single-title">
   <h3>{{this.beach.name}}, {{this.beach.region}}</h3>
-<div class="info-beach-container">
-  <img src="{{this.beach.beachPic}}" alt="beach-image">
-  <p>Description:</p>
-  <p>{{this.beach.description}}</p>
-  <p>Difficulty access: {{this.beach.difficultyAccess}}</p>
-  <p>Entertainment:</p>
-  <ul>
-    {{#each this.beach.entertainment}}
-    <li>{{this}}</li>
-    {{/each}}
-  </ul>
-  <div>
-    {{#if adminActive}}
-    <form action="/admin/delete/{{this.beach._id}}" method="post">
-    <button>Delete</button>
-    </form>
-    <a href="/admin/edit/{{this.beach._id}}"><button>Edit</button></a>
-    {{/if}}
+</div>
+  <div class="single-img">
+    <img src="{{this.beach.beachPic}}" alt="beach-image" />
   </div>
-</div>
-
+<div class="info-beach-container">
+  <div class="single-info">
+    <h5>Description:</h5>
+    <p>{{this.beach.description}}</p>
+    <h5>Difficulty access: </h5>
+    <p>{{this.beach.difficultyAccess}}</p>
+    <h5>Entertainment:</h5>
+    <ul>
+      {{#each this.beach.entertainment}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </div>
 <div id="map"></div>
-
-<div>
-  <form action="/comment/create/{{this.beach._id}}" method="post">
-    <label for="comment">Comments: </label>
-    <textarea name="comment" cols="30" rows="10"></textarea>
-    <button>Send comment</button>
-    
+</div>
+<div class="single-admin-btn">
+  {{#if adminActive}}
+  <h5>Admin beach options: </h5>
+    <form action="/admin/delete/{{this.beach._id}}" method="post">
+      <button class="btn btn-danger">Delete</button>
     </form>
-    {{#each this.allComment}}
-   <h3>{{this.user.username}}</h3>
-   <p>{{this.comment}}</p>
-    {{!-- aqui no podemos poner this.comment porque comment es un string del modelo y deberiamos cambiarlo a futuro por text --}}
-    {{#if isOwner}}
-   <a href="/comment/edit/{{this._id}}"><button class="btn btn-primary">Edit coment</button></a>
-   <form action="/comment/delete/{{this._id}}" method="post">
-   <button class="btn btn-danger">Delete coment</button>
-   </form>
-   {{/if}}
-    {{/each}}
+    <a href="/admin/edit/{{this.beach._id}}"><button class="btn btn-primary">Edit</button></a>
+  {{/if}}
 </div>
 
+
+<div class="mb-3">
+  <form action="/comment/create/{{this.beach._id}}" method="post">
+    <label for="comment" class="form-label">Comments: </label>
+    <textarea name="comment" rows="3" class="form-control" id="exampleFormControlTextarea1"></textarea>
+    <button class="sendComment">Send comment</button>
+  </form>
+ </div>
+ <div class="all-comment" >
+  {{#each this.allComment}}
+  <div class="each-comment">
+    <h3>{{this.user.username}}</h3>
+    <p>{{this.comment}}</p>
+    {{! aqui no podemos poner this.comment porque comment es un string del modelo y deberiamos cambiarlo a futuro por text }}
+    {{#if isOwner}}
+    <div class="btn-comment">
+      <form action="/comment/delete/{{this._id}}" method="post">
+        <button class="btn btn-danger">Delete coment</button>
+      </form>
+      <a href="/comment/edit/{{this._id}}"><button class="btn btn-primary">Edit
+          coment</button></a>
+      </div>
+    {{/if}}
+    </div>
+  {{/each}}
+</div>
 
 <script>
   let map = L.map('map').setView([{{{this.lat}}},{{{this.lon}}}], 13)
-
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-L.marker([{{{this.lat}}},{{{this.lon}}}]).addTo(map)
-    .bindPopup('Here is the beach')
-    .openPopup();
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors' })
+  .addTo(map); 
+  L.marker([{{{this.lat}}},{{{this.lon}}}]).addTo(map)
+  .bindPopup('Here is the beach') .openPopup();
+  
 </script>

@@ -22,7 +22,6 @@ h1 {
   margin-bottom: 50px;
   text-align: center;
   color: blue;
-  
 }
 
 .list-group {
@@ -64,15 +63,77 @@ h1 {
 
 #map {
   margin: 10px;
-  width: 500px;
+  width: 600px;
   height: 400px;
   border-radius: 15px;
 }
 
 .info-beach-container {
-  margin-top: 100px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
-.info-beach-container img {
-  width: 600px;
+.single-img img {
+  width: 800px;
   border-radius: 15px;
+  display: block;
+  margin: auto;
+}
+#single-title {
+  margin: 50px;
+  text-align: center;
+}
+.single-info {
+  width: 600px;
+}
+.single-info h5 {
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.single-info p,
+li {
+  text-decoration: none;
+  font-size: 16px;
+}
+.single-admin-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.sendComment {
+  width: 150px;
+  height: 30px;
+  border-radius: 15px;
+}
+.btn {
+  border-radius: 20px;
+  font-size: 10px;
+}
+
+.all-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+}
+
+.each-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  border: 1px solid black;
+  width: max-content;
+}
+.each-comment h3 {
+  display: block;
+}
+.btn-comment {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
 }
