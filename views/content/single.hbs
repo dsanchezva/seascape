@@ -25,10 +25,10 @@
 <div class="single-admin-btn">
   {{#if adminActive}}
   <h5>Admin beach options: </h5>
+    <a href="/admin/edit/{{this.beach._id}}"><button class="btn btn-primary">Edit</button></a>
     <form action="/admin/delete/{{this.beach._id}}" method="post">
       <button class="btn btn-danger">Delete</button>
     </form>
-    <a href="/admin/edit/{{this.beach._id}}"><button class="btn btn-primary">Edit</button></a>
   {{/if}}
 </div>
 
@@ -48,11 +48,11 @@
     {{! aqui no podemos poner this.comment porque comment es un string del modelo y deberiamos cambiarlo a futuro por text }}
     {{#if isOwner}}
     <div class="btn-comment">
+      <a href="/comment/edit/{{this._id}}"><button class="btn btn-primary">Edit
+          coment</button></a>
       <form action="/comment/delete/{{this._id}}" method="post">
         <button class="btn btn-danger">Delete coment</button>
       </form>
-      <a href="/comment/edit/{{this._id}}"><button class="btn btn-primary">Edit
-          coment</button></a>
       </div>
     {{/if}}
     </div>

@@ -58,10 +58,12 @@ router.post("/login", async (req, res, next) => {
     next(err);
   }
 });
+
 //GET "user/signup"
 router.get("/signup", async (req, res, next) => {
   res.render("user/signup.hbs");
 });
+
 //POST "user/signup"
 router.post("/signup", async (req, res, next) => {
   // verify that the input are not empty

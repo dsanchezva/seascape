@@ -3,22 +3,19 @@
 </div>
 <div class="profile-content">
   <h1>Hello {{this.userToSend.username}}</h1>
-  
-    <h4>These are all your comments:</h4>
-  
-    <div class="all-comment" >
-  {{#each this.allCommentUser}}
+  <h4>These are all your comments:</h4>
+  <div class="all-comment">
+    {{#each this.allCommentUser}}
     <div class="each-comment">
-      <h3>{{this.beach.name}}</h>
-      <p>{{this.comment}}</p>
-      <div class="btn-comment">
-        <a href="/comment/edit/{{this._id}}"><button class="btn btn-primary">Edit coment</button></a>
-        <form action="/comment/delete/{{this._id}}" method="post">
-          <button class="btn btn-danger">Delete coment</button>
-        </form>
+      <h3>{{this.beach.name}}</h3>
+        <p>{{this.comment}}</p>
+        <div class="btn-comment">
+          <a href="/comment/edit/{{this._id}}"><button class="btn btn-primary">Edit coment</button></a>
+          <form action="/comment/delete/{{this._id}}" method="post">
+            <button class="btn btn-danger">Delete coment</button>
+          </form>
+        </div>
     </div>
-   </div>
-  {{/each}}
+    {{/each}}
   </div>
-  
 </div>
