@@ -1,12 +1,20 @@
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/content">Sea Scapes</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+    <a class="navbar-brand" href="/content">
+      <img src="/images/sea-scape-logo.png" alt="logo-gif" width="50px">
+      <img src="/images/sea-scape-name.png" alt="name" width="100px" style="margin-left: 10px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+      aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+      aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Sea Scapes</h5>
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+          <img src="/images/sea-scape-logo.png" alt="logo" width="100px">
+          <img src="/images/sea-scape-name.png" alt="name" width="200px" style="margin-left: 10px;">
+        </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -30,19 +38,19 @@
             </ul>
           </li>
           {{#if adminActive}}
-              <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="/admin">Admin</a>
           </li>
 
           {{/if}}
-              <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="/user/logout">Log Out</a>
           </li>
         </ul>
-        <form class="d-flex mt-3" role="search">
+        {{!-- <form class="d-flex mt-3" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-success" type="submit">Search</button>
-        </form>
+        </form> --}}
       </div>
     </div>
   </div>
