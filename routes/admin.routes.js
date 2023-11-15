@@ -1,5 +1,5 @@
 const express = require("express");
-const Beach = require("../models/Beach.model.js");
+const Beach = require("../models/beach.model.js");
 const router = express.Router();
 const uploader = require("../middlewares/cloudinary.middleware.js");
 

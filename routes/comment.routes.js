@@ -1,8 +1,8 @@
 const express = require("express");
-const Beach = require("../models/Beach.model.js");
+const Beach = require("../models/beach.model.js");
 const router = express.Router();
 const User = require("../models/User.model");
-const Comment = require("../models/Comment.model.js");
+const Comment = require("../models/comment.model.js");
 
 //POST comment create
 
@@ -32,7 +32,6 @@ router.get("/edit/:id", async (req, res, next) => {
     );
     // ponemos == para que compare el interior del objeto y no que todo sea exactamente igual
     if (commentToCheck.user._id == req.session.user._id) {
-
       res.render("comment/edit-comment.hbs", { commentToCheck });
     } else {
       next("User not authorized to edit this comment");
@@ -48,12 +47,14 @@ router.post("/edit/:id", async (req, res, next) => {
   console.log(req.body);
   const commentId = req.params.id;
   try {
-    const commentToEdit = await Comment.findByIdAndUpdate(commentId, { comment }).populate("beach");
+    const commentToEdit = await Comment.findByIdAndUpdate(commentId, {
+      comment,
+    }).populate("beach");
     res.redirect(`/content/${commentToEdit.beach._id}/beachInfo`);
   } catch (err) {
     next(err);
   }
-})
+});
 
 // POST "/comment/delete/:id"
 router.post("/delete/:id", async (req, res, next) => {
@@ -64,6 +65,6 @@ router.post("/delete/:id", async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-})
+});
 
 module.exports = router;
