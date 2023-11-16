@@ -1,9 +1,8 @@
-# seascape
-# THE SIMPSONS, DONUT RUN!!
+# SEA SCAPE
 
-## [Play the Game!](https://dsanchezva.github.io/the-simpsons-donut-run/)
+## [See!](https://seascape.adaptable.app)
 
-![Game Logo](./images/Donut-Run-Logo.png)
+![Game Logo](./public/images/sea-scape-logo.gif)
 
 # Description
 
