@@ -4,15 +4,16 @@
 <div class="create-form">
   <h3 class="margin2">Create Beaches</h3>
   <form action="/admin" method="post" enctype="multipart/form-data">
-      <label for="floatingInput" class="margin3">Name: </label>
     <div class="form-floating mb-3">
       <input
         type="text"
         name="name"
         value="{{this.name}}"
         class="form-control"
-        id="floatingInput"
+        id="floatingNameInput"
+        placeholder="Name"
       />
+      <label for="floatingNameInput">Name</label>
     </div>
     <br />
     <label for="region" class="margin3">Region: </label>
@@ -39,18 +40,15 @@
       <option value="Ciudad Autónoma de Melilla">Ciudad Autónoma de Melilla</option>
     </select>
     <br />
-      <label for="floatingTextarea2" class="margin3">Description: </label>
     <div class="form-floating">
       <textarea
         name="description"
-        cols="30"
-        rows="10"
-        value="{{this.description}}"
         class="form-control"
         placeholder="Leave a description here"
-        id="floatingTextarea2"
+        id="floatingDescriptionTextarea"
         style="height: 100px"
-      ></textarea>
+      >{{this.description}}</textarea>
+      <label for="floatingDescriptionTextarea">Description</label>
     </div>
     <br />
     <div class="input-group input-group-sm mb-3">
