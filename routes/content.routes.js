@@ -61,16 +61,60 @@ router.get("/:id/beachInfo", async (req, res, next) => {
     const allComment = await Comment.find({ beach: req.params.id }).populate(
       "user"
     );
+    const allRating = await Rating.find({ beach: req.params.id }).populate(
+      "user"
+    );
     allComment.forEach((comment) => {
       if (comment.user._id == req.session.user._id) {
-        comment.isOwner = true;
+        comment.isCommentOwner = true;
       } else {
-        comment.isOwner = false;
+        comment.isCommentOwner = false;
+      }
+    });
+    let isRatingOwner = true;
+    allRating.forEach((rating) => {
+      if (rating.user._id == req.session.user._id) {
+        isRatingOwner = false;
+      } else {
+        isRatingOwner = true;
+      }
+    });
+    console.log(allRating);
+    let ratingSum = allRating.reduce((acc, curr) => acc + curr.rating, 0);
+    let mediumRating = 0;
+    if (allRating[0] !== undefined) {
+      mediumRating = Math.round(ratingSum / allRating.length);
+    } 
+    res.render("content/single.hbs", {
+      beach,
+      allComment,
+      mediumRating,
+      isRatingOwner,
+      lat: beach.location[0],
+      lon: beach.location[1],
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Get "/content/:id/beachInfo" rating
+router.get("/:id/beachInfo", async (req, res, next) => {
+  try {
+    const beach = await Beach.findById(req.params.id);
+    const allRating = await Rating.find({ beach: req.params.id }).populate(
+      "user"
+    );
+    allRating.forEach((rating) => {
+      if (rating.user._id == req.session.user._id) {
+        rating.isRatingOwner = true;
+      } else {
+        rating.isRatingOwner = false;
       }
     });
     res.render("content/single.hbs", {
       beach,
-      allComment,
+      allRating,
       lat: beach.location[0],
       lon: beach.location[1],
     });

@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 const ratingSchema = new mongoose.Schema({
-  rating: Number,
+  rating: {
+    type: Number,
+    default: 0,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
