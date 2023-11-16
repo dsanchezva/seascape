@@ -3,6 +3,7 @@ const router = express.Router();
 const Beach = require("../models/beach.model.js");
 const User = require("../models/User.model.js");
 const Comment = require("../models/comment.model.js");
+const Rating = require("../models/rating.model.js");
 
 router.get("/", async (req, res, next) => {
   res.render("content/main-page.hbs");
@@ -67,7 +68,6 @@ router.get("/:id/beachInfo", async (req, res, next) => {
         comment.isOwner = false;
       }
     });
-    console.log(beach);
     res.render("content/single.hbs", {
       beach,
       allComment,
@@ -92,4 +92,5 @@ router.get("/profile", async (req, res, next) => {
     next(err);
   }
 });
+
 module.exports = router;
