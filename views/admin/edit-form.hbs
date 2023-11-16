@@ -3,16 +3,16 @@
 </div>
 <div class="edit-form">
   <h3>EDIT BEACH</h3>
-  <form action="/admin/edit/{{this.beachToEdit._id}}" method="post">
-      <label for="floatingInput">Name: </label>
+    <form action="/admin/edit/{{this.beachToEdit._id}}" method="post">
     <div class="form-floating mb-3">
       <input
         type="text"
         name="name"
         value="{{this.beachToEdit.name}}"
         class="form-control"
-        id="floatingInput"
+        id="floatingNameInput"
       />
+      <label for="floatingNameInput">Name</label>
     </div>
     <br />
     <label for="region">Region: </label>
@@ -42,16 +42,16 @@
       <option value="Ciudad Autónoma de Melilla">Ciudad Autónoma de Melilla</option>
     </select>
     <br />
-      <label for="floatingTextarea2">Description: </label>
-    <div class="form-floating">
+       <div class="form-floating">
       <textarea
         name="description"
         cols="30"
         rows="30"
         class="form-control"
-        id="floatingTextarea2"
+        id="floatingDescriptionTextarea"
         style="height: 100px"
       >{{this.beachToEdit.description}}</textarea>
+      <label for="floatingDescriptionTextarea">Description</label>
     </div>
     <br />
     <div class="input-group input-group-sm mb-3">
