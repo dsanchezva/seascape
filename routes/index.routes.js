@@ -19,4 +19,7 @@ router.use("/content", isLoggedIn, contentRouter);
 const commentRouter = require("./comment.routes.js");
 router.use("/comment", isLoggedIn, commentRouter);
 
+const ratingRouter = require("./rating.routes.js");
+router.use("/rating", isLoggedIn, ratingRouter);
+
 module.exports = router;

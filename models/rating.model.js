@@ -1,7 +1,10 @@
-const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
 
-const ratingSchema = new Schema({
-  rating: Number,
+const ratingSchema = new mongoose.Schema({
+  rating: {
+    type: Number,
+    default: 0,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -12,5 +15,5 @@ const ratingSchema = new Schema({
   },
 });
 
-const Rating = model("Rating", ratingSchema)
-module.exports = Rating
+const Rating = mongoose.model("Rating", ratingSchema);
+module.exports = Rating;

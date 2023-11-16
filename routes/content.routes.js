@@ -3,6 +3,7 @@ const router = express.Router();
 const Beach = require("../models/beach.model.js");
 const User = require("../models/User.model.js");
 const Comment = require("../models/comment.model.js");
+const Rating = require("../models/rating.model.js");
 
 router.get("/", async (req, res, next) => {
   res.render("content/main-page.hbs");
@@ -60,17 +61,60 @@ router.get("/:id/beachInfo", async (req, res, next) => {
     const allComment = await Comment.find({ beach: req.params.id }).populate(
       "user"
     );
+    const allRating = await Rating.find({ beach: req.params.id }).populate(
+      "user"
+    );
     allComment.forEach((comment) => {
       if (comment.user._id == req.session.user._id) {
-        comment.isOwner = true;
+        comment.isCommentOwner = true;
       } else {
-        comment.isOwner = false;
+        comment.isCommentOwner = false;
       }
     });
-    console.log(beach);
+    let isRatingOwner = true;
+    allRating.forEach((rating) => {
+      if (rating.user._id == req.session.user._id) {
+        isRatingOwner = false;
+      } else {
+        isRatingOwner = true;
+      }
+    });
+    console.log(allRating);
+    let ratingSum = allRating.reduce((acc, curr) => acc + curr.rating, 0);
+    let mediumRating = 0;
+    if (allRating[0] !== undefined) {
+      mediumRating = Math.round(ratingSum / allRating.length);
+    } 
     res.render("content/single.hbs", {
       beach,
       allComment,
+      mediumRating,
+      isRatingOwner,
+      lat: beach.location[0],
+      lon: beach.location[1],
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Get "/content/:id/beachInfo" rating
+router.get("/:id/beachInfo", async (req, res, next) => {
+  try {
+    const beach = await Beach.findById(req.params.id);
+    const allRating = await Rating.find({ beach: req.params.id }).populate(
+      "user"
+    );
+    allRating.forEach((rating) => {
+      if (rating.user._id == req.session.user._id) {
+        rating.isRatingOwner = true;
+      } else {
+        rating.isRatingOwner = false;
+      }
+    });
+    res.render("content/single.hbs", {
+      beach,
+      allRating,
       lat: beach.location[0],
       lon: beach.location[1],
     });
@@ -92,4 +136,5 @@ router.get("/profile", async (req, res, next) => {
     next(err);
   }
 });
+
 module.exports = router;

@@ -33,6 +33,21 @@
 </div>
 
 
+<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="{{this.mediumRating}}" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar bg-warning text-dark" style="width: {{this.mediumRating}}0%">{{this.mediumRating}}</div>
+</div>
+
+
+<div class="mb-3">
+  {{#if this.isRatingOwner}}
+  <form action="/rating/create/{{this.beach._id}}" method="post">
+    <label for="rating" class="form-label">Rating: </label>
+    <input type="range" class="form-range" min="0" max="10" name="rating">
+    <button class="btn btn-primary" style="margin-top: 10px;">Send rating</button>
+  </form>
+  {{/if}}
+</div>
+
 <div class="mb-3">
   <form action="/comment/create/{{this.beach._id}}" method="post">
     <label for="comment" class="form-label">Comments: </label>
@@ -46,7 +61,7 @@
     <h3>{{this.user.username}}</h3>
     <p>{{this.comment}}</p>
     {{! aqui no podemos poner this.comment porque comment es un string del modelo y deberiamos cambiarlo a futuro por text }}
-    {{#if isOwner}}
+    {{#if isCommentOwner}}
     <div class="btn-comment">
       <a href="/comment/edit/{{this._id}}"><button class="btn btn-primary">Edit
           coment</button></a>
