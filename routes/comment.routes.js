@@ -14,6 +14,10 @@ router.post("/create/:id", async (req, res, next) => {
     beach,
     user,
   };
+  if (comment === "") {
+    res.status(400).redirect(`/content/${beach}/beachInfo`);
+    return;
+  }
   try {
     await Comment.create(newComment);
     res.redirect(`/content/${beach}/beachInfo`);
