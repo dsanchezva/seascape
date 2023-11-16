@@ -28,10 +28,13 @@ The Simpsons Donut Run is a simple game where Homer have to eat to much Donut yo
 - HTML
 - CSS
 - JavaScript
-- DOM manipulation
-- JS classes
-- JS Audio()
+- Boorstrap
+- Express.js
+- Node.js
 - GitHub
+- bcryptjs
+- Handlebars
+- mongodb
 
 # States
 
@@ -127,11 +130,7 @@ The Simpsons Donut Run is a simple game where Homer have to eat to much Donut yo
 
 ### Sketch
 
-[Link](https://excalidraw.com/#json=nuuzMnBGAvtaAFCXmnoR5,iiMv7u8njc-WikPnsVPXPg)
-
-### Trello
-
-[Link](https://trello.com/b/lAKCubBR/the-simpsons-donut-run)
+[Link](https://excalidraw.com/#room=7a5a6f82b2f6f52d18bf,3uYNMui4c3tG9ABnmBKrSQ)
 
 ### Slides
 
