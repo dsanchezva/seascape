@@ -68,7 +68,7 @@ router.post("/", uploader.single("image"), async (req, res, next) => {
       entertainment,
       beachPic,
     });
-    res.redirect("/");
+    res.redirect("/content");
   } catch (err) {
     next(err);
   }

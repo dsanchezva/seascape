@@ -12,87 +12,72 @@ Sea Scape is a web app where users explore and rate beaches. They can search by 
 
 - **404** - User can see a nice 404 page when goes to a page that doesn’t exist so that they know it was their fault.
 - **500** - User can see a nice error page when the team screws it up so that they know that is not their fault.
-- **login-signup** - There is a welcome page that gives the option to either log in as an existing user, or sign up with a new account.
-- **add-signup** - Also new users can sign up with full information so that they can have access to the page.
-- **homepage** - Users can see a carrousel of images on the home page.
-- **beach-search** - Users can explore beaches by region or view a comprehensive list of available beaches.
-- **beach-details** - Upon selecting a specific beach, users can view detailed information including reviews, ratings, and general descriptions. Additionally, they can access administrative controls to edit or delete their comments.
-- **administrative-controls** - Administrators have exclusive rights to manage the beach database. They can edit or delete existing beach entries, create new ones, and moderate user comments to maintain a positive community environment.
-  <br>
+- **Login-signup** - There is a welcome page that gives the option to either log in as an existing user, or sign up with a new account.
+- **Add-signup** - Also new users can sign up with full information so that they can have access to the page.
+- **Homepage** - Users can see a carrousel of images on the home page.
+- **Beach-search** - Users can explore beaches by region or view a comprehensive list of available beaches.
+- **Beach-details** - Upon selecting a specific beach, users can view detailed information including reviews, ratings, and general descriptions. Additionally, they can access administrative controls to edit or delete their comments.
+- **Administrative-controls** - Administrators have exclusive rights to manage the beach database. They can edit or delete existing beach entries, create new ones, and moderate user comments to maintain a positive community environment.
 
 ## API routes (back-end)
 
-- GET /
-  - renders login-signup.hbs
-- GET /auth/signup
-  - redirects to / if user logged in
-  - renders add-signup.hbs
-- POST /auth/signup
-  - redirects to / if user logged in
-  - body:
-    - email
-    - password
+- GET /user/signup
+  - renders signup.hbs
+- POST /user/signup
+   - body:
     - username
-- POST /auth/login
-  - redirects to / if user logged in
+    - email
+    - password
+    - errMessage if any of the fields is empty or doesn't meet the requirements
+- GET /user/login 
+  - renders login.hbs   
+- POST /user/login
+  - redirect to /content 
   - body:
     - email
     - password
-- GET /
-  - renders homepage.hbs (the profile preview + search form)
-- POST /homepage (search action)
+    - errMessage if any of the fields is empty or doesn't meet the requirements
+- GET /content
+    - renders content/main-page.hbs
+- GET /content/all
+  - renders content/all-beach.hbs
+  - includes the list of beaches displayed in cards
+  - redirects to /content/:id/beachInfo if user presses one card 
+- GET /content/allRegion
+  - renders content/region.hbs
+  - redirects to content/:region/beachRegion if user presses one region
+- GET /content/:id/beachInfo
   - body:
-    - game-title
-    - console
-- GET /game-search-results
-  - renders game-search-results.hbs
-  - includes the list of games
-  - redirects to / if user presses button
-- GET /rent-form/:id
-  - renders rent-form.hbs
-  - redirects to /game-search-results if user presses button
-- POST /rent-form/:id
+    - name
+    - region
+    - description
+    - rating
+    - comments
+- GET /content/profile/:id
+  - renders content/user-profile.hbs
+  - List of all your comments
+# Admin Routes:
+- GET /admin
+  - renders admin/create-form.hbs
+- POST /admin
+   - redirects to /content if admin completes the form 
+   - create a new beach
   - body:
-    - days
-    - price update
-- GET /success
-  - renders success.hbs
-  - redirects to / if user presses button
-- GET /profile
-  - renders user-profile.hbs
-  - redirects to / if user presses button
-- POST /profile (to edit profile)
-  - redirects to /add-signup (we reuse it but for edit purposes)
-  - body:
-    - email
-    - password
-    - full name
-    - birthday
-    - gender
-    - address
-    - phone
-    - cardInfo
-    - typeOfCard
-    - cardNumber
-    - expDate
-    - CVV
-- POST /profile (to add game)
-  - body:
-    - game title
-    - console
-    - price
-    - max days of rent
-- GET /profile
-  - renders user-profile.hbs updated
-  - redirects to / if user presses button
-- GET /notifications
-  - renders notifications.hbs
-  - redirects to / if user presses button
-- GET /success (for renter)
-  - renders success.hbs
-  - redirects to /notifications if user presses button
-
-<br>
+    - name
+    - region
+    - description
+    - localtion
+    - accessibility
+    - entertainment
+    - upload photo
+- GET /edit/:id
+    - renders to admin/edit-form.hbs
+- Post /edit/:id
+  - updates the info of each beach
+  - redirects to /content/${req.params.id}/beachInfo
+- POST /admin/delete/:id
+  - deletes the beach
+  - redirects to /content/all once deleted
 
 ## Models
 
