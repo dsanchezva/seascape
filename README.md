@@ -1,6 +1,6 @@
 # SEA SCAPE
 
-## [See!](https://seascape.adaptable.app)
+## [To Web App](https://seascape.adaptable.app)
 
 ![Web Logo](./public/images/sea-scape-logo.gif)
 
@@ -10,10 +10,10 @@ Sea Scape is a web app where users explore and rate beaches. They can search by 
 
 ## User stories
 
-- **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault.
-- **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
-- **login-signup** - As a user I want to see a welcome page that gives me the option to either log in as an existing user, or sign up with a new account.
-- **add-signup** - As a user I want to sign up with my full information so that I can have access to the page.
+- **404** - User can see a nice 404 page when goes to a page that doesn’t exist so that they know it was their fault.
+- **500** - User can see a nice error page when the team screws it up so that they know that is not their fault.
+- **login-signup** - There is a welcome page that gives the option to either log in as an existing user, or sign up with a new account.
+- **add-signup** - Also new users can sign up with full information so that they can have access to the page.
 - **homepage** - Users can see a carrousel of images on the home page.
 - **beach-search** - Users can explore beaches by region or view a comprehensive list of available beaches.
 - **beach-details** - Upon selecting a specific beach, users can view detailed information including reviews, ratings, and general descriptions. Additionally, they can access administrative controls to edit or delete their comments.
@@ -202,9 +202,23 @@ Rating Model
 
 ## Backlog
 
--
+- Favorite Beaches:
+  - Add a functionality so users can like their favorites beaches and add it to their profile.
 
-<br>
+- Nodemailer:
+  - Add nodemailer so the user recives a notification once their are logged in.
+
+- Search Functionality: 
+  - Allow users to search for beaches by name, activities, or specific region.
+
+- Weather API:
+  - Provide current and forecasted weather conditions for each beach location.
+
+- Photo Gallery: 
+  - Allow users to upload photos to the comments.
+
+- Mobile friendly interface:
+  - Make it responsive to all screen sizes.
 
 # Links
 
